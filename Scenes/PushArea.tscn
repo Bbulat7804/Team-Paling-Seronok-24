@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy2g13ukn4hdw"]
+
+[ext_resource type="Script" path="res://Scripts/push_area.gd" id="1_66fnv"]
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_66fnv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

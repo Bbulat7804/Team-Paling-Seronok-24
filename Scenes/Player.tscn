@@ -1,12 +1,111 @@
-[gd_scene load_steps=2 format=3 uid="uid://cymr0ms8ocakc"]
+[gd_scene load_steps=15 format=3 uid="uid://cymr0ms8ocakc"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bnt3d"]
+[ext_resource type="PackedScene" uid="uid://cy2g13ukn4hdw" path="res://Scenes/PushArea.tscn" id="2_bvpqn"]
+[ext_resource type="Texture2D" uid="uid://dpvqq23vs73ov" path="res://Assets/ShooterSprite.png" id="3_xfneo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifbup"]
+size = Vector2(8, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l3fm"]
+size = Vector2(10, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf3h3"]
+size = Vector2(1, 22.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmiwa"]
+size = Vector2(1, 22)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_75wfi"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2cyc"]
+atlas = ExtResource("3_xfneo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucnp3"]
+atlas = ExtResource("3_xfneo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kactj"]
+atlas = ExtResource("3_xfneo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8eyr"]
+atlas = ExtResource("3_xfneo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6k81"]
+atlas = ExtResource("3_xfneo")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fihaq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2cyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucnp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kactj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8eyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6k81")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_bnt3d")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(2, 6)
-scale = Vector2(0.957983, 0.957983)
-color = Color(0, 0, 1, 1)
-polygon = PackedVector2Array(-61, -60, 57, -59.0087, 56, 43.3421, -62, 43.3421)
+[node name="PushUp" parent="." instance=ExtResource("2_bvpqn")]
+
+[node name="PushUpArea" type="CollisionShape2D" parent="PushUp"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_ifbup")
+
+[node name="PushDown" parent="." instance=ExtResource("2_bvpqn")]
+
+[node name="PushDownArea" type="CollisionShape2D" parent="PushDown"]
+position = Vector2(0, 19.25)
+shape = SubResource("RectangleShape2D_4l3fm")
+
+[node name="PushLeft" parent="." instance=ExtResource("2_bvpqn")]
+
+[node name="PushLeftArea" type="CollisionShape2D" parent="PushLeft"]
+position = Vector2(-12.5, 0)
+shape = SubResource("RectangleShape2D_hf3h3")
+
+[node name="PushRight" parent="." instance=ExtResource("2_bvpqn")]
+
+[node name="PushRightArea" type="CollisionShape2D" parent="PushRight"]
+position = Vector2(14, 0)
+shape = SubResource("RectangleShape2D_jmiwa")
+
+[node name="PushTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="PushedTimer" type="Timer" parent="."]
+wait_time = 0.145
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_75wfi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 0)
+sprite_frames = SubResource("SpriteFrames_fihaq")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[connection signal="timeout" from="PushTimer" to="." method="_on_push_timer_timeout"]
+[connection signal="timeout" from="PushedTimer" to="." method="_on_pushed_timer_timeout"]
