@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://crvbiiuw6duit"]
+
+[ext_resource type="Script" path="res://Scripts/bullets.gd" id="1_s4y41"]
+[ext_resource type="PackedScene" uid="uid://csdbxeq17yfbi" path="res://Scenes/KillZone.tscn" id="2_t14ll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm2os"]
+size = Vector2(11.5, 2)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_s4y41")
+
+[node name="KillZone" parent="." instance=ExtResource("2_t14ll")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_pm2os")
+
+[node name="Polygon2D" type="Polygon2D" parent="KillZone/CollisionShape2D"]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-6, -1, 6, -1, 6, 1, -6, 1)

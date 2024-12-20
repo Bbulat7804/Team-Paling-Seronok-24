@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dia60x3eqasis"]
+
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_7jmvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov22m"]
+
+[node name="Gun" type="Node2D"]
+script = ExtResource("1_7jmvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ov22m")
+disabled = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0.282237, 0.498103, 1, 1)
+polygon = PackedVector2Array(0, -2, 10, -2, 10, 1, 5, 1, 0, 1)
