@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt23x4y3unqje"]
+
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_20yyo"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_20yyo")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
