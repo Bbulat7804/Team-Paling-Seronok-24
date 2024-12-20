@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://20g7egxw7tra"]
+[gd_scene load_steps=2 format=3 uid="uid://20g7egxw7tra"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_0u0fx"]
-[ext_resource type="PackedScene" uid="uid://defg2s4e8nhhw" path="res://Scenes/gun.tscn" id="2_8goiu"]
-[ext_resource type="PackedScene" uid="uid://c1wfbs4kg3soh" path="res://Scenes/Map1.tscn" id="2_sl5mu"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,8 +10,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0u0fx")
-
-[node name="Node2D" parent="." instance=ExtResource("2_sl5mu")]
-
-[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("2_8goiu")]
-position = Vector2(571, 349)

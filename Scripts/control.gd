@@ -1,8 +1,9 @@
 extends Control
 
+var playerScene = preload("res://Scenes/Player.tscn")
 var map1
-var player1
-var player2
+var player1 : Player
+var player2 : Player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_initializeMap()
@@ -16,18 +17,16 @@ func _process(delta: float) -> void:
 	pass	
 	
 func _initalizeKeyBind() -> void:
-	player1.down = "S"
-	player1.up = "W"
+	player1.jump = "W"
 	player1.left = "A"
 	player1.right = "D"
 	
-	player2.down = "K"
-	player2.up = "I"
-	player2.left = "J"
-	player2.right = "L"
+	player1.jump = "I"
+	player1.left = "J"
+	player1.right = "L"
 	pass
 func _initializePlayer() -> void:
-	
+	player1 = 
 	
 	pass
 
