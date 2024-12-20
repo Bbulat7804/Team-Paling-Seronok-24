@@ -10,7 +10,7 @@ size = Vector2(49, 644.5)
 size = Vector2(33, 640)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqllx"]
-size = Vector2(616, 79)
+size = Vector2(616, 53)
 
 [node name="Node2D" type="StaticBody2D"]
 
@@ -18,7 +18,7 @@ size = Vector2(616, 79)
 polygon = PackedVector2Array(294, 1, 904, -1, 904.901, 289.932, 906, 645, 288, 647)
 
 [node name="BottomBorder" type="CollisionShape2D" parent="."]
-position = Vector2(596.25, 655.75)
+position = Vector2(602, 661)
 shape = SubResource("RectangleShape2D_jw7vb")
 
 [node name="LeftBorder" type="CollisionShape2D" parent="."]
@@ -30,5 +30,5 @@ position = Vector2(921.5, 323)
 shape = SubResource("RectangleShape2D_c8ae0")
 
 [node name="TopBorder" type="CollisionShape2D" parent="."]
-position = Vector2(594, -38.5)
+position = Vector2(594, -25.5)
 shape = SubResource("RectangleShape2D_qqllx")
