@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var pushAreaLeft : Area2D = $PushAreaLeft
 @onready var pushAreaRight : Area2D = $PushAreaRight
 const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -540.0
 var jump
 var right
 var left
