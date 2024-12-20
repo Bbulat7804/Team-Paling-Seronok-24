@@ -1,8 +1,162 @@
-[gd_scene load_steps=4 format=3 uid="uid://20g7egxw7tra"]
+[gd_scene load_steps=6 format=3 uid="uid://20g7egxw7tra"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_0u0fx"]
-[ext_resource type="PackedScene" uid="uid://defg2s4e8nhhw" path="res://Scenes/gun.tscn" id="2_8goiu"]
-[ext_resource type="PackedScene" uid="uid://ii0bymak6wlx" path="res://Scenes/Map1.tscn" id="2_sl5mu"]
+[ext_resource type="Texture2D" uid="uid://o1a3cos51u6r" path="res://Assets/Background/Terrain (16x16).png" id="2_5jsaw"]
+[ext_resource type="PackedScene" uid="uid://dia60x3eqasis" path="res://Scenes/gun.tscn" id="2_8goiu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y32a4"]
+texture = ExtResource("2_5jsaw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+9:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ky6hm"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_y32a4")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,7 +167,47 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0u0fx")
 
-[node name="Node2D" parent="." instance=ExtResource("2_sl5mu")]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ky6hm")
+format = 2
+layer_0/tile_data = PackedInt32Array(2555905, 393216, 0, 2555906, 393216, 0, 2555907, 393216, 0, 2555908, 393216, 0, 2555909, 393216, 0, 2555910, 393216, 0, 2555911, 393216, 0, 2555912, 393216, 0, 2555913, 393216, 0, 2555914, 393216, 0, 2555915, 393216, 0, 2555916, 393216, 0, 2555917, 393216, 0, 2555918, 393216, 0, 2555919, 393216, 0, 2621456, 393216, 0, 2621457, 393216, 0, 2621458, 393216, 0, 2621459, 393216, 0, 2621460, 393216, 0, 2621461, 393216, 0, 2621462, 393216, 0, 2621463, 393216, 0, 2621464, 393216, 0, 2621465, 393216, 0, 2621466, 393216, 0, 2621467, 393216, 0, 2621468, 393216, 0, 2555932, 393216, 0, 2555933, 393216, 0, 2555934, 393216, 0, 2555935, 393216, 0, 2555936, 393216, 0, 2555937, 393216, 0, 2555938, 393216, 0, 2555939, 393216, 0, 2555940, 393216, 0, 2555941, 393216, 0, 2555942, 393216, 0, 2555943, 393216, 0, 2555944, 393216, 0, 2555945, 393216, 0, 2555946, 393216, 0, 2555947, 393216, 0, 2555948, 393216, 0, 2555949, 393216, 0, 2555950, 393216, 0, 2555951, 393216, 0, 2555952, 393216, 0, 2555953, 393216, 0, 2555954, 393216, 0, 2555955, 393216, 0, 2555956, 393216, 0, 2555957, 393216, 0, 2555958, 393216, 0, 2555959, 393216, 0, 2555960, 393216, 0, 2555961, 393216, 0, 2555962, 393216, 0, 2621499, 393216, 0, 2621500, 393216, 0, 2621501, 393216, 0, 2621502, 393216, 0, 2621503, 393216, 0, 2621504, 393216, 0, 2621505, 393216, 0, 2621506, 393216, 0, 2621507, 393216, 0, 2621508, 393216, 0, 2555972, 393216, 0, 2555973, 393216, 0, 2555974, 393216, 0, 2555975, 393216, 0)
 
-[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("2_8goiu")]
-position = Vector2(571, 349)
+[node name="Gun" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-48, -47)
+rotation = 0.853466
+
+[node name="Gun2" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1400, 204)
+rotation = -3.71057
+
+[node name="Gun3" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-178, 345)
+rotation = 0.286234
+
+[node name="Gun4" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(158, -39)
+rotation = -4.66876
+
+[node name="Gun5" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(453, -51)
+rotation = -4.4279
+
+[node name="Gun6" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(986, -43)
+rotation = 1.91812
+
+[node name="Gun7" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1296, -12)
+rotation = 2.337
+
+[node name="Gun8" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1388, 528)
+rotation = 3.02989
+
+[node name="Gun9" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(686, -47)
+rotation = 1.15017
+
+[node name="Gun10" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-252, 541)
+rotation = 0.118682

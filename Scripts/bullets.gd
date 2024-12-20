@@ -2,11 +2,7 @@ extends CharacterBody2D
 var pos:Vector2
 var rota:float
 var dir: float
-var speed= 2000
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
+var speed= 300
 
 func _ready():
 	global_position=pos

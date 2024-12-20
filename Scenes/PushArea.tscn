@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bma1vm0piyj1t"]
+
+[ext_resource type="Script" path="res://Scripts/push_area.gd" id="1_ry74u"]
+
+[node name="PushArea" type="Area2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_ry74u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
