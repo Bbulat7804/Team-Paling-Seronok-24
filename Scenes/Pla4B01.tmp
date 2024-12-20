@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d15peuc1kar06"]
+[gd_scene load_steps=30 format=3 uid="uid://d15peuc1kar06"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bkj7q"]
 [ext_resource type="Texture2D" uid="uid://c7jq43747qyek" path="res://Assets/Main_character/Idle (32x32).png" id="2_g848p"]
@@ -53,13 +53,13 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("3_bim6a")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c04y8"]
-atlas = ExtResource("4_ibdfs")
-region = Rect2(32, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_oeyn6"]
 atlas = ExtResource("4_ibdfs")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c04y8"]
+atlas = ExtResource("4_ibdfs")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uiku"]
 atlas = ExtResource("4_ibdfs")
@@ -138,7 +138,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_20i8y")
 }],
 "loop": true,
-"name": &"idle1",
+"name": &"idle",
 "speed": 16.0
 }, {
 "frames": [{
@@ -146,15 +146,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_112sm")
 }],
 "loop": true,
-"name": &"jump1",
+"name": &"jump",
 "speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c04y8")
+"texture": SubResource("AtlasTexture_oeyn6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oeyn6")
+"texture": SubResource("AtlasTexture_c04y8")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5uiku")
@@ -187,22 +187,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_vxsik")
 }],
 "loop": true,
-"name": &"run1",
+"name": &"run",
 "speed": 12.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1x2cv"]
-radius = 8.0
-height = 22.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_bkj7q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_482f0")
-animation = &"idle1"
-autoplay = "idle1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_1x2cv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.559712

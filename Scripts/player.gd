@@ -2,31 +2,50 @@ class_name Player
 
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-var down
-var up
-var left
+@onready var animation : AnimatedSprite2D = $AnimatedSprite2D
+const SPEED = 200.0
+const JUMP_VELOCITY = -270.0
+var jump
 var right
+var left
+var direction
+var character
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if Input.is_action_pressed(down):
-		velocity.y = SPEED
-	if Input.is_action_pressed(up):
-		velocity.y = -SPEED
-	if Input.is_action_pressed(left):
-		velocity.x = -SPEED
-	if Input.is_action_pressed(right):
-		velocity.x = SPEED
-	if Input.is_action_pressed(down) and Input.is_action_pressed(up):
-		velocity.y = 0
-	if !Input.is_action_pressed(down) and !Input.is_action_pressed(up):
-		velocity.y = 0
-	if Input.is_action_pressed(left) and Input.is_action_pressed(right):
-		velocity.x = 0
-	if !Input.is_action_pressed(left) and !Input.is_action_pressed(right):
-		velocity.x = 0
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 
-	move_and_slide()
+	# Handle jump.
+	if Input.is_action_just_pressed(jump) and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		animation.play("run" + character)
+	# Get the input direction and handle the movement/deceleration
+	# As good practice, you should replace UI actions with custom gameplay actions.
+
+	direction = Input.get_axis(left, right)
+	if direction>0:
+		velocity.x = SPEED * 1
+	elif direction<0:
+		velocity.x = SPEED * -1
+	else:
+		velocity.x = 0
+	if is_on_floor():
+		if direction>0:
+			animation.play("run" + character)
+			animation.flip_h = false;
+		elif direction<0:
+			animation.play("run" + character)
+			animation.flip_h = true;
+		else:
+			animation.play("idle" + character)
+	else:
+		if velocity.y<0: 
+			animation.play("jump" + character)
+		else:
+			animation.play("jump" + character)
+		
+	move_and_slide()	
+	
+func _die():
+	queue_free()
