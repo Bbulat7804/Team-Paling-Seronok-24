@@ -2,13 +2,20 @@ class_name Player
 
 extends CharacterBody2D
 
-
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 var down
 var up
 var left
 var right
+<<<<<<< Updated upstream
+=======
+var push
+var isPushed = false
+
+@onready var push_timer: Timer = $PushTimer
+@onready var pushed_timer: Timer = $PushedTimer
+>>>>>>> Stashed changes
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
