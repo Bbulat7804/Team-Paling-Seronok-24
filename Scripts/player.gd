@@ -1,39 +1,25 @@
-class_name Player
-
 extends CharacterBody2D
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
-var down
-var up
-var left
-var right
-<<<<<<< Updated upstream
-=======
-var push
-var isPushed = false
 
-@onready var push_timer: Timer = $PushTimer
-@onready var pushed_timer: Timer = $PushedTimer
->>>>>>> Stashed changes
-	
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if Input.is_action_pressed(down):
-		velocity.y = SPEED
-	if Input.is_action_pressed(up):
-		velocity.y = -SPEED
-	if Input.is_action_pressed(left):
-		velocity.x = -SPEED
-	if Input.is_action_pressed(right):
-		velocity.x = SPEED
-	if Input.is_action_pressed(down) and Input.is_action_pressed(up):
-		velocity.y = 0
-	if !Input.is_action_pressed(down) and !Input.is_action_pressed(up):
-		velocity.y = 0
-	if Input.is_action_pressed(left) and Input.is_action_pressed(right):
-		velocity.x = 0
-	if !Input.is_action_pressed(left) and !Input.is_action_pressed(right):
-		velocity.x = 0
-		
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis("ui_left", "ui_right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
 	move_and_slide()
