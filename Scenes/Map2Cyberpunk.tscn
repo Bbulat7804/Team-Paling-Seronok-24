@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://xonv1bbw8kju"]
+
+[ext_resource type="Texture2D" uid="uid://lp3fo4iy3bcs" path="res://Assets/Background/MAP2.jpg" id="1_ocx0b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1200.0
+scale = Vector2(0.599093, 0.538121)
+texture = ExtResource("1_ocx0b")
