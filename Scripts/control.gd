@@ -109,11 +109,18 @@ func _randomizeKey(die:Player,win:Player):
 		key = die.jump
 		if die == player1:
 			inGameStats.p1Jump = key
+		else:
+			inGameStats.p2Jump
 
 	if rand == 2:
 		die.left = char(int(randi_range(65,90)))
 		while die.left==win.jump or die.left==win.left or die.left == win.right or die.left == win.push:
-			die.jump = char(int(randi_range(65,90)))
+			die.left = char(int(randi_range(65,90)))
+		key = die.left
+		if die == player1:
+			inGameStats.p1Left = key
+		else:
+			inGameStats.p2Left
 	if rand == 3:
 		die.right = char(int(randi_range(65,90)))
 		while die.right==win.jump or die.right==win.left or die.right == win.right or die.right == win.push:
