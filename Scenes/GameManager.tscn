@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://20g7egxw7tra"]
+[gd_scene load_steps=8 format=3 uid="uid://20g7egxw7tra"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_0u0fx"]
 [ext_resource type="PackedScene" uid="uid://dia60x3eqasis" path="res://Scenes/gun.tscn" id="2_8goiu"]
+[ext_resource type="PackedScene" uid="uid://bup5ux5liwmga" path="res://Scenes/UnloadArea.tscn" id="3_5iksp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xscic"]
+size = Vector2(1986, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y36r4"]
+size = Vector2(77, 1319)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogx2c"]
+size = Vector2(61, 1165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icmo7"]
+size = Vector2(2185, 82)
 
 [node name="Control" type="Control"]
+visibility_layer = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,6 +71,31 @@ one_shot = true
 
 [node name="P2RespawnTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="UnloadAreaRight" parent="." instance=ExtResource("3_5iksp")]
+position = Vector2(13, -239)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaRight"]
+position = Vector2(636, 58)
+shape = SubResource("RectangleShape2D_xscic")
+
+[node name="UnloadAreaLeft" parent="." instance=ExtResource("3_5iksp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaLeft"]
+position = Vector2(-293.5, 437.5)
+shape = SubResource("RectangleShape2D_y36r4")
+
+[node name="UnloadAreaTop" parent="." instance=ExtResource("3_5iksp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaTop"]
+position = Vector2(1604, 380)
+shape = SubResource("RectangleShape2D_ogx2c")
+
+[node name="UnloadAreaBottom" parent="." instance=ExtResource("3_5iksp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaBottom"]
+position = Vector2(762, 936)
+shape = SubResource("RectangleShape2D_icmo7")
 
 [connection signal="timeout" from="P1RespawnTimer" to="." method="_on_p_1_respawn_timer_timeout"]
 [connection signal="timeout" from="P2RespawnTimer" to="." method="_on_p_2_respawn_timer_timeout"]

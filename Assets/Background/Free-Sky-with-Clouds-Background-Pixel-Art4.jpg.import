@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfk734agwn8q8"
-path="res://.godot/imported/BONTOT-HAZIM-2D-12-20-2024-ezgif.com-gif-to-sprite-converter.png-cf031cb53a85612226c8bdd1a861a58e.ctex"
+uid="uid://cku8gel3qpu5d"
+path="res://.godot/imported/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg-fa688a1d08d69cdf99afaca056123a9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpriteSheet/BONTOT-HAZIM-2D-12-20-2024-ezgif.com-gif-to-sprite-converter.png"
-dest_files=["res://.godot/imported/BONTOT-HAZIM-2D-12-20-2024-ezgif.com-gif-to-sprite-converter.png-cf031cb53a85612226c8bdd1a861a58e.ctex"]
+source_file="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg"
+dest_files=["res://.godot/imported/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg-fa688a1d08d69cdf99afaca056123a9c.ctex"]
 
 [params]
 
