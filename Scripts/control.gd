@@ -9,6 +9,7 @@ static var mode
 var playerScene = preload("res://Scenes/Player.tscn")
 var InGameStatsScene = preload("res://Scenes/ingameStats.tscn")
 var map1Scene = preload("res://Scenes/MAP1CYBERPUNK.tscn")
+var map2Scene = preload("res://Scenes/MAP2WINTER.tscn")
 var cameraScene = preload("res://Scenes/PlayerCamera.tscn")
 var mainScreenScene = preload("res://Scenes/MainScreen.tscn")
 var camera: Camera
@@ -18,12 +19,14 @@ var Streak2 = 0
 @onready var P2RespawnTimer: Timer = $P2RespawnTimer
 var inGameStats: Stats
 static var map1
+static var map2
 static var mapArray = []
 static var mapIndex
 var player1: Player
 var player2: Player
 var default_sprite_scale = Vector2(3.0, 3.0) # Increased size for default
-var pressed_sprite_scale = Vector2(2.5, 2.5) # Slightly smaller for pressed effect
+var pressed_sprite_scale = Vector2(2.5, 2.5) # Slightly smaller for pressed effectwi
+var winningPoint = 3
 
 func _ready() -> void:
 	if mode == DOUBLETROUBLE:
@@ -39,6 +42,9 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	if inGameStats.p1Score == 3 or inGameStats.p2Score == 3:
+		var next_scene_path = "res://Scenes/EndScreen.tscn"
+		get_tree().change_scene_to_file(next_scene_path)
 	_handle_key_scaling(player1.jump, "Score1/Panel/SpritePlayer1Up")
 	_handle_key_scaling(player1.left, "Score1/Panel/SpritePlayer1Left")
 	_handle_key_scaling(player1.push, "Score1/Panel/SpritePlayer1Down")
@@ -93,7 +99,9 @@ func _initializePlayer() -> void:
 func _initializeMap() -> void:
 	inGameStats = InGameStatsScene.instantiate()
 	map1 = map1Scene.instantiate()
+	map2 = map2Scene.instantiate()
 	mapArray.push_front(map1)
+	mapArray.push_front(map2)
 	camera = cameraScene.instantiate()
 	pass
 
@@ -102,7 +110,7 @@ func _goToMap(map) -> void:
 	camera._linkPlayer(player1, player2)
 	player1.position = Vector2(400, 550)
 	player2.position = Vector2(600, 550)
-	add_child(map1)
+	add_child(map)
 	add_child(player1)
 	add_child(player2)
 	add_child(inGameStats)
@@ -123,7 +131,7 @@ func _on_p_2_respawn_timer_timeout() -> void:
 	add_child(player2)
 	pass
 
-func _randomizeKey(die: Player, win: Player):
+func _randomizeKey(win: Player, die: Player):
 	randomize()
 	var newKey
 	var key = str(int(randi_range(65, 90)))
