@@ -1,0 +1,163 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckr3maaqle2gm"]
+
+[ext_resource type="Script" path="res://Scripts/mode_select_screen.gd" id="1_14by4"]
+[ext_resource type="Texture2D" uid="uid://cku8gel3qpu5d" path="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg" id="2_vy2mw"]
+[ext_resource type="Texture2D" uid="uid://cf4w1fg7qipuj" path="res://Assets/images/left-arrow_614864.png" id="4_dqeja"]
+[ext_resource type="AudioStream" uid="uid://v5gv3b1h0fq0" path="res://Assets/Musics/y2mate.com - Sounds of button selection in the game menu sound effect.mp3" id="5_hkto0"]
+[ext_resource type="FontFile" uid="uid://byw2kvxgxn3dm" path="res://Assets/Font/Pixellari.ttf" id="5_krjvs"]
+[ext_resource type="Texture2D" uid="uid://brr8dnk07lyl6" path="res://Assets/images/photo_2024-12-21_13-36-44.jpg" id="5_q4pfp"]
+[ext_resource type="AudioStream" uid="uid://dyw6yvlljknlc" path="res://Assets/Musics/click.mp3" id="6_2jy30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3h6yc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvjva"]
+bg_color = Color(0, 0, 0, 0.415686)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2l6u"]
+bg_color = Color(0.78114, 0.789551, 0.793152, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d3ig"]
+bg_color = Color(0.780392, 0.788235, 0.792157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru5n1"]
+bg_color = Color(0.780392, 0.788235, 0.792157, 1)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_14by4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.509286, 0.509286, 0.509286, 1)
+position = Vector2(595, 252)
+scale = Vector2(0.954405, 0.870208)
+texture = ExtResource("2_vy2mw")
+
+[node name="ButtonBack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 162.0
+offset_bottom = 100.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3h6yc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonBack"]
+modulate = Color(0.741385, 0.741385, 0.741385, 1)
+position = Vector2(64, 48)
+scale = Vector2(0.147461, 0.147461)
+texture = ExtResource("4_dqeja")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.650128, 0.650128, 0.650128, 1)
+layout_mode = 0
+offset_left = 71.0
+offset_top = 105.0
+offset_right = 1076.0
+offset_bottom = 561.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hvjva")
+
+[node name="ButtonClassic" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 34.0
+offset_right = 332.0
+offset_bottom = 337.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_w2l6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/ButtonClassic"]
+position = Vector2(148.862, 152.25)
+scale = Vector2(0.676632, 0.831006)
+texture = ExtResource("5_q4pfp")
+
+[node name="Label" type="Label" parent="Panel/ButtonClassic"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 353.0
+offset_right = 242.0
+offset_bottom = 413.0
+theme_override_fonts/font = ExtResource("5_krjvs")
+theme_override_font_sizes/font_size = 60
+text = "Classic"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 33.0
+offset_right = 652.0
+offset_bottom = 331.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3d3ig")
+
+[node name="Label" type="Label" parent="Panel/Button2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 353.0
+offset_right = 284.0
+offset_bottom = 413.0
+theme_override_fonts/font = ExtResource("5_krjvs")
+theme_override_font_sizes/font_size = 60
+text = "Power Up"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.326
+anchor_top = -0.151
+anchor_right = -1.326
+anchor_bottom = -0.151
+offset_left = 2008.63
+offset_top = 102.856
+offset_right = 2306.63
+offset_bottom = 400.856
+theme_override_styles/hover = SubResource("StyleBoxFlat_ru5n1")
+
+[node name="Label" type="Label" parent="Panel/Button3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 323.0
+offset_right = 254.0
+offset_bottom = 446.0
+theme_override_constants/line_spacing = -7
+theme_override_fonts/font = ExtResource("5_krjvs")
+theme_override_font_sizes/font_size = 60
+text = "Double 
+Trouble"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 28.0
+offset_right = 319.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("5_krjvs")
+theme_override_font_sizes/font_size = 60
+text = "Mode"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 29.0
+offset_right = 497.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("5_krjvs")
+theme_override_font_sizes/font_size = 60
+text = "Select"
+
+[node name="SoundHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hkto0")
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2jy30")
+volume_db = 8.432
+
+[connection signal="mouse_entered" from="ButtonBack" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="mouse_entered" from="Panel/ButtonClassic" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_classic_pressed"]
+[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Panel/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Button3" to="." method="_on_button_3_mouse_entered"]

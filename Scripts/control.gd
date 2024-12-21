@@ -15,9 +15,10 @@ var player2 : Player
 func _ready() -> void:
 	Gun.randomIndex = 100
 	Bullet.speed = 300
-	_initializeMap()
+	#_initializeMap()
 	_initializePlayer()
 	_initalizeKeyBind()
+	map1 = map1Scene.instantiate()
 	add_child(map1)
 	#_goToMap(map1)
 	

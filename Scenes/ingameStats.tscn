@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbyt465a8kuif"]
+[gd_scene load_steps=8 format=3 uid="uid://dbyt465a8kuif"]
 
 [ext_resource type="Script" path="res://Scripts/ingame_stats.gd" id="1_qik5j"]
 [ext_resource type="Texture2D" uid="uid://c7jq43747qyek" path="res://Assets/Main_character/Idle (32x32).png" id="1_rd3bs"]
-[ext_resource type="Texture2D" uid="uid://bfuftyxeksv3i" path="res://Assets/Main_character/Idle2 (32x32).png" id="2_yy52u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btso2"]
 atlas = ExtResource("1_rd3bs")
@@ -19,20 +18,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a2md0"]
-atlas = ExtResource("2_yy52u")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_silao"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a2md0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7d44e"]
 font_size = 44

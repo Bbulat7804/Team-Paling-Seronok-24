@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4ono2sl0hnrt"]
+[gd_scene load_steps=13 format=3 uid="uid://d2f3ws3dqsf6x"]
 
 [ext_resource type="Script" path="res://Scripts/MainScreen.gd" id="1_mbu88"]
 [ext_resource type="Texture2D" uid="uid://cku8gel3qpu5d" path="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg" id="2_4qn0f"]
