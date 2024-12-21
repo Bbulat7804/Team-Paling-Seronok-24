@@ -17,6 +17,7 @@ var Streak1 = 0
 var Streak2 = 0
 @onready var P1RespawnTimer: Timer = $P1RespawnTimer
 @onready var P2RespawnTimer: Timer = $P2RespawnTimer
+@onready var DeathPromptTimer: Timer = $DeathPromptTimer
 var inGameStats: Stats
 static var map1
 static var map2
@@ -27,7 +28,9 @@ var player2: Player
 var default_sprite_scale = Vector2(3.0, 3.0) # Increased size for default
 var pressed_sprite_scale = Vector2(2.5, 2.5) # Slightly smaller for pressed effectwi
 var winningPoint = 3
-static var deathPrompt
+static var randomDeathPrompt = ""
+static var deathPrompt = ""
+
 func _ready() -> void:
 	if mode == DOUBLETROUBLE:
 		Gun.randomIndex = 200
@@ -75,6 +78,8 @@ func _process(delta: float) -> void:
 		P1RespawnTimer.start()
 		Streak2 += 1
 		Streak1 = 0
+		deathPrompt = str("Player 1 " , randomDeathPrompt)
+		DeathPromptTimer.start()
 	if player2.isDead:
 		$dieSoundPlayer.play()
 		inGameStats.p1Score += 1
@@ -84,6 +89,8 @@ func _process(delta: float) -> void:
 		P2RespawnTimer.start()
 		Streak1 += 1
 		Streak2 = 0
+		deathPrompt = str("player 2 " , randomDeathPrompt)
+		DeathPromptTimer.start()
 	pass
 
 func _initializeKeyBind() -> void:
@@ -207,3 +214,9 @@ func _handle_key_scaling(action: String, sprite_path: String) -> void:
 			sprite.scale = pressed_sprite_scale
 		else:
 			sprite.scale = default_sprite_scale
+
+
+func _on_death_prompt_timer_timeout() -> void:
+	deathPrompt = ""
+	randomDeathPrompt = ""
+	pass # Replace with function body.

@@ -130,5 +130,9 @@ rotation = 0.118682
 position = Vector2(-169, 607)
 rotation = -0.47473
 
+[node name="DeathPromptTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="P1RespawnTimer" to="." method="_on_p_1_respawn_timer_timeout"]
 [connection signal="timeout" from="P2RespawnTimer" to="." method="_on_p_2_respawn_timer_timeout"]
+[connection signal="timeout" from="DeathPromptTimer" to="." method="_on_death_prompt_timer_timeout"]

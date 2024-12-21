@@ -46,6 +46,7 @@ func _ready():
 	shieldEffect = shieldEffectSceme.instantiate()
 	santaEffect = santaEffectScene.instantiate()
 	strengthEffect = strengthEffectScene.instantiate()
+	_initializePrompt()
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -105,6 +106,7 @@ func _initializePrompt():
 	fallPrompt.push_front("Fall2")
 	fallPrompt.push_front("Fall3")
 	fallPrompt.push_front("Fall4")
+
 func _die():
 	if hasShield:
 		print("masuk")
@@ -120,6 +122,7 @@ func _die():
 		isDead = true
 		immune = true
 		immuneExit = true
+		GameManager.randomDeathPrompt = shotPrompt[int(randi_range(0,3))]
 
 func _exitWorld():
 	if immuneExit:
@@ -133,6 +136,7 @@ func _exitWorld():
 	isDead = true
 	immune = true
 	immuneExit = true
+	GameManager.randomDeathPrompt = fallPrompt[int(randi_range(0,3))]
 
 func _push():
 	pushLeft.pushable = true
