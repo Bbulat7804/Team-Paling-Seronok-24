@@ -297,3 +297,4 @@ text = "Start Game"
 [connection signal="mouse_entered" from="CharacterBody2D/TextEditPlayer1" to="." method="_on_text_edit_player_1_mouse_entered"]
 [connection signal="mouse_entered" from="CharacterBody2D2/TextEditPlayer2" to="." method="_on_text_edit_player_2_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/ButtonStartGame" to="." method="_on_button_start_game_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonStartGame" to="." method="_on_button_start_game_pressed"]

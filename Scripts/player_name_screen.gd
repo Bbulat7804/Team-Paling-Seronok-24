@@ -30,3 +30,10 @@ func _on_button_start_game_mouse_entered() -> void:
 
 func _on_button_back_mouse_entered() -> void:
 	$SoundHover.play()
+
+
+func _on_button_start_game_pressed() -> void:
+	GameManager.p1Name = $CharacterBody2D/TextEditPlayer1.text
+	GameManager.p2Name = $CharacterBody2D2/TextEditPlayer2.text
+	GameManager.mapIndex = int(randi_range(0,GameManager.mapArray.size()-1))
+	get_tree().change_scene_to_file("res://Scenes/GameManager.tscn")

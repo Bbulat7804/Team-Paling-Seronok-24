@@ -1,14 +1,21 @@
+class_name GameManager
+
 extends Control
 
 var playerScene = preload("res://Scenes/Player.tscn")
 var InGameStatsScene = preload("res://Scenes/ingameStats.tscn")
 var map1Scene = preload("res://Scenes/L1MAP1.tscn")
 var cameraScene = preload("res://Scenes/PlayerCamera.tscn")
+var mainScreenScene = preload("res://Scenes/MainScreen.tscn")
 var camera:Camera
 @onready var P1RespawnTimer : Timer = $P1RespawnTimer
 @onready var P2RespawnTimer : Timer = $P2RespawnTimer
 var inGameStats : Stats
-var map1
+static var map1
+static var mapArray = []
+static var p1Name
+static var p2Name
+static var mapIndex
 var player1 : Player
 var player2 : Player
 # Called when the node enters the scene tree for the first time.L
@@ -17,12 +24,9 @@ func _ready() -> void:
 	Bullet.speed = 300
 	_initializeMap()
 	_initializePlayer()
-	_initalizeKeyBind()
-	_goToMap(map1)
-	
+	_initializeKeyBind()
+	_goToMap(mapArray[mapIndex])
 	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player1.isDead:
@@ -38,7 +42,7 @@ func _process(delta: float) -> void:
 		P2RespawnTimer.start()
 	pass
 	
-func _initalizeKeyBind() -> void:
+func _initializeKeyBind() -> void:
 	player1.jump = "W"
 	player1.left = "A"
 	player1.right = "D"
@@ -59,6 +63,7 @@ func _initializePlayer() -> void:
 func _initializeMap() -> void:
 	inGameStats = InGameStatsScene.instantiate()
 	map1 = map1Scene.instantiate()
+	mapArray.push_front(map1)
 	camera = cameraScene.instantiate()
 	pass
 	
@@ -84,8 +89,12 @@ func _on_p_1_respawn_timer_timeout() -> void:
 	add_child(player1)
 	pass # Replace with function body.
 
-
+func _ChangePage(page1, page2):
+	remove_child(page1)
+	add_child(page2)
+	
 func _on_p_2_respawn_timer_timeout() -> void:
 	player2.position = Vector2(600,550)
 	add_child(player2)
 	pass # Replace with function body.
+	
