@@ -48,4 +48,4 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_e53iu")
 autoplay = "default"
-frame_progress = 0.729933
+frame_progress = 0.0355005

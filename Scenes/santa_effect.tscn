@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://b0aayw4w87u5y"]
+
+[ext_resource type="Texture2D" uid="uid://cuglglsc3xelm" path="res://Assets/PowerUp/Christmas EFFECT.png" id="1_b43o5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt032"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsmhv"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s560"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgdmu"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xllfa"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw7b3"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa12s"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5otm"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgx0t"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnjjl"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajkcy"]
+atlas = ExtResource("1_b43o5")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kqr1v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt032")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsmhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s560")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgdmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xllfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw7b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa12s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5otm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgx0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnjjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajkcy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="SantaEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_kqr1v")
+autoplay = "default"
+frame_progress = 0.854373

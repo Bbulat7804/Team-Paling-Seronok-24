@@ -30,17 +30,20 @@ func _on_button_back_pressed() -> void:
 
 func _on_button_classic_pressed() -> void:
 	GameManager.mode = GameManager.CLASSIC
+	Map.mode = GameManager.CLASSIC
 	var next_scene_path = "res://Scenes/PlayerNameScreen.tscn"
 	get_tree().change_scene_to_file("res://Scenes/PlayerNameScreen.tscn")
 
 
 func _on_button_power_up_pressed() -> void:
 	GameManager.mode = GameManager.POWERUP
+	Map.mode = GameManager.POWERUP
 	var next_scene_path = "res://Scenes/PlayerNameScreen.tscn"
 	get_tree().change_scene_to_file("res://Scenes/PlayerNameScreen.tscn")
 
 
 func _on_button_double_trouble_pressed() -> void:
 	GameManager.mode = GameManager.DOUBLETROUBLE
+	Map.mode = GameManager.DOUBLETROUBLE
 	var next_scene_path = "res://Scenes/PlayerNameScreen.tscn"
 	get_tree().change_scene_to_file("res://Scenes/PlayerNameScreen.tscn")

@@ -9,10 +9,10 @@ static var page
 
 
 func _ready() -> void:
-	#player1Name = 
-	#player2Name = 
-	#var player1Points:int = 
-	#var player2Points:int = 
+	player1Name = Stats.p1Name
+	player2Name = Stats.p2Name
+	var player1Points:int = Stats.p1Score
+	var player2Points:int = Stats.p2Score
 	$LabelPlayer1Name.text = "Player(1): " + str(player1Name)
 	$LabelPlayer2Name.text = "Player(2): " + str(player2Name)
 	$LabelPlayer1Name/LabelPlayer1Points.text = str(player1Points)

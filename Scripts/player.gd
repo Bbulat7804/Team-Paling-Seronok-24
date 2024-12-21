@@ -13,10 +13,15 @@ extends CharacterBody2D
 @onready var jumpSound : AudioStreamPlayer2D = $JumpSoundPlayer
 @onready var strengthTimer : Timer = $StrengthTimer
 @onready var shieldTimer : Timer = $ShieldTimer
+@onready var santaTimer : Timer = $SantaTimer
 @onready var exitWorldTimer : Timer = $ExitWorldTimer
 
 var shieldEffectSceme = preload("res://Scenes/ShieldEffect.tscn")
+var santaEffectScene = preload("res://Scenes/santa_effect.tscn")
+var strengthEffectScene = preload("res://Scenes/strength_effect.tscn")
 var shieldEffect
+var santaEffect
+var strengthEffect
 var hasShield = false
 const SPEED = 200.0
 const JUMP_VELOCITY = -540.0
@@ -37,6 +42,8 @@ var immuneExit = false
 func _ready():
 	_initialize_push_area()
 	shieldEffect = shieldEffectSceme.instantiate()
+	santaEffect = santaEffectScene.instantiate()
+	strengthEffect = strengthEffectScene.instantiate()
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -147,15 +154,24 @@ func _on_immune_timer_timeout() -> void:
 
 
 func _on_strength_timer_timeout() -> void:
+	remove_child(strengthEffect)
 	pushSpeed -= 1500
 	pass # Replace with function body.
 
 
 func _on_shield_timer_timeout() -> void:
+	remove_child(shieldEffect)
 	hasShield = false
 	pass # Replace with function body.
 
 
 func _on_exit_world_timer_timeout() -> void:
 	immuneExit = false
+	pass # Replace with function body.
+
+
+func _on_santa_timer_timeout() -> void:
+	pushSpeed -= 1500
+	hasShield = false
+	remove_child(santaEffect)
 	pass # Replace with function body.

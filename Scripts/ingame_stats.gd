@@ -3,8 +3,8 @@ class_name Stats
 extends Node2D
 
 
-var p1Score = 0
-var p2Score = 0
+static var p1Score = 0
+static var p2Score = 0
 static var p1Name
 var p1Jump = "87"
 var p1Left = "65"

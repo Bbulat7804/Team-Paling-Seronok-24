@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bf5byl4cyrtrl"]
 
-[ext_resource type="Script" path="res://Scripts/map_1cyberpunk.gd" id="1_ctbiv"]
+[ext_resource type="Script" path="res://Scripts/map_1.gd" id="1_ctbiv"]
 [ext_resource type="Texture2D" uid="uid://c5s0mpcag4wmn" path="res://Assets/Background/cyberpunk.webp" id="1_x2eeo"]
 [ext_resource type="Texture2D" uid="uid://df73c3qo1jnja" path="res://Assets/Tiles/tileset.png" id="2_3ld6m"]
 [ext_resource type="PackedScene" uid="uid://b41pv5ft1wfv4" path="res://Scenes/SantaPowerUp.tscn" id="3_17eub"]

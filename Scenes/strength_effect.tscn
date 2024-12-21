@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfopibmqw8tro"]
+
+[ext_resource type="Texture2D" uid="uid://dusmlnm0fxvp0" path="res://Assets/PowerUp/STRENGTH EFFECT.png" id="1_r55dx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qexop"]
+atlas = ExtResource("1_r55dx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpjtn"]
+atlas = ExtResource("1_r55dx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c0fg"]
+atlas = ExtResource("1_r55dx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0lg6"]
+atlas = ExtResource("1_r55dx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgcq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qexop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpjtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c0fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0lg6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="StrengthEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_bgcq7")
+autoplay = "default"
+frame_progress = 0.828289

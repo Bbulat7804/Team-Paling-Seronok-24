@@ -382,6 +382,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqyer"]
+radius = 8.0
 height = 26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlq1q"]
@@ -449,9 +450,14 @@ one_shot = true
 [node name="ExitWorldTimer" type="Timer" parent="."]
 wait_time = 1.1
 
+[node name="SantaTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="PushTimer" to="." method="_on_push_timer_timeout"]
 [connection signal="timeout" from="PushedTimer" to="." method="_on_pushed_timer_timeout"]
 [connection signal="timeout" from="ImmuneTimer" to="." method="_on_immune_timer_timeout"]
 [connection signal="timeout" from="StrengthTimer" to="." method="_on_strength_timer_timeout"]
 [connection signal="timeout" from="ShieldTimer" to="." method="_on_shield_timer_timeout"]
 [connection signal="timeout" from="ExitWorldTimer" to="." method="_on_exit_world_timer_timeout"]
+[connection signal="timeout" from="SantaTimer" to="." method="_on_santa_timer_timeout"]
