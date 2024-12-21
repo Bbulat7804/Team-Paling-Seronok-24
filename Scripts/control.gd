@@ -3,20 +3,23 @@ extends Control
 var playerScene = preload("res://Scenes/Player.tscn")
 var playerCameraScene = preload("res://Scenes/PlayerCamera.tscn")
 var playerCamera
+var map1Scene = preload("res://Scenes/L1MAP1.tscn")
 var map1
 var player1 : Player
 var player2 : Player
 # Called when the node enters the scene tree for the first time.L
 func _ready() -> void:
-	Gun.randomIndex = 500
+	Gun.randomIndex = 100
+	Bullet.speed = 500
 	_initializeMap()
 	_initializePlayer()
 	_initalizeKeyBind()
-	player1.position = Vector2(200,500)
-	player2.position = Vector2(400,500)
+	#_goToMap(map1)
+	player1.position = Vector2(500,700)
+	player2.position = Vector2(700,700)
 	add_child(player1)
 	add_child(player2)
-	
+	add_child(map1)
 	pass # Replace with function body.
 
 
@@ -44,9 +47,14 @@ func _initializePlayer() -> void:
 	pass
 
 func _initializeMap() -> void:
-	
+	map1 = map1Scene.instantiate()
 	pass
 	
 func _goToMap(map) -> void:
-	
+	print("go to map ",map)
+	player1.position = Vector2(500,700)
+	player2.position = Vector2(700,700)
+	add_child(player1)
+	add_child(player2)
+	add_child(map)
 	pass
