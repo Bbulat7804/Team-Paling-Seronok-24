@@ -197,6 +197,7 @@ label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
 
 [node name="p2Name" type="Label" parent="Score2/Panel"]
+layout_mode = 0
 offset_left = 100.0
 offset_top = -13.0
 offset_right = 177.0

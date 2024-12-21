@@ -2,12 +2,18 @@ class_name GameManager
 
 extends Control
 
+const CLASSIC = "CLASSIC"
+const POWERUP = "POWERUP"
+const DOUBLETROUBLE = "DOUBLETROUBLE"
+static var mode
 var playerScene = preload("res://Scenes/Player.tscn")
 var InGameStatsScene = preload("res://Scenes/ingameStats.tscn")
 var map1Scene = preload("res://Scenes/L1MAP1.tscn")
 var cameraScene = preload("res://Scenes/PlayerCamera.tscn")
 var mainScreenScene = preload("res://Scenes/MainScreen.tscn")
 var camera:Camera
+var Streak1 = 0
+var Streak2 = 0
 @onready var P1RespawnTimer : Timer = $P1RespawnTimer
 @onready var P2RespawnTimer : Timer = $P2RespawnTimer
 var inGameStats : Stats
@@ -18,8 +24,12 @@ var player1 : Player
 var player2 : Player
 # Called when the node enters the scene tree for the first time.L
 func _ready() -> void:
-	Gun.randomIndex = 300
-	Bullet.speed = 300
+	if mode == DOUBLETROUBLE:
+		Gun.randomIndex = 200
+		Bullet.speed = 400
+	else:
+		Gun.randomIndex = 400
+		Bullet.speed = 300
 	_initializeMap()
 	_initializePlayer()
 	_initializeKeyBind()
@@ -27,6 +37,13 @@ func _ready() -> void:
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Streak1==2 or Streak2==2:
+		if mode == POWERUP:
+			#spawn()
+			print("spawn")
+			Streak1 = 0
+			Streak2 = 0
+		
 	if player1.isDead:
 		$dieSoundPlayer.play()
 		inGameStats.p2Score += 1
@@ -34,6 +51,8 @@ func _process(delta: float) -> void:
 		player1.isDead = false
 		remove_child(player1)
 		P1RespawnTimer.start()
+		Streak2 += 1
+		Streak1 = 0
 		
 	if player2.isDead:
 		$dieSoundPlayer.play()
@@ -42,6 +61,8 @@ func _process(delta: float) -> void:
 		player2.isDead = false
 		remove_child(player2)
 		P2RespawnTimer.start()
+		Streak1 +=1
+		Streak2 = 0
 	pass
 	
 func _initializeKeyBind() -> void:
@@ -61,7 +82,7 @@ func _initializePlayer() -> void:
 	player1 = playerScene.instantiate()
 	player2 = playerScene.instantiate()
 	pass
-
+	
 func _initializeMap() -> void:
 	inGameStats = InGameStatsScene.instantiate()
 	map1 = map1Scene.instantiate()
@@ -104,11 +125,12 @@ func _randomizeKey(die:Player,win:Player):
 	randomize()
 	var newKey
 	var key = str(int(randi_range(65,90)))
+	newKey = str(char(int(key)))
 	var rand = int(randi_range(1,4)) 
-	while key==win.left or key == win.right or key == win.jump or key == win.push or key == die.left or key == die.right or key == die.jump or key == die.push:
+	while newKey==win.left or newKey == win.right or newKey == win.jump or newKey == win.push or newKey == die.left or newKey == die.right or newKey == die.jump or newKey == die.push:
 		randomize()
 		key = str(int(randi_range(65,90)))
-	newKey = str(char(int(key)))
+		newKey = str(char(int(key)))
 	
 	if rand == 1:
 		if die==player1:

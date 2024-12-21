@@ -85,7 +85,7 @@ theme_override_fonts/font = ExtResource("5_krjvs")
 theme_override_font_sizes/font_size = 60
 text = "Classic"
 
-[node name="Button2" type="Button" parent="Panel"]
+[node name="ButtonPowerUp" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 354.0
 offset_top = 33.0
@@ -93,7 +93,7 @@ offset_right = 652.0
 offset_bottom = 331.0
 theme_override_styles/hover = SubResource("StyleBoxFlat_3d3ig")
 
-[node name="Label" type="Label" parent="Panel/Button2"]
+[node name="Label" type="Label" parent="Panel/ButtonPowerUp"]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 353.0
@@ -103,17 +103,17 @@ theme_override_fonts/font = ExtResource("5_krjvs")
 theme_override_font_sizes/font_size = 60
 text = "Power Up"
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/Button2"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/ButtonPowerUp"]
 position = Vector2(150, 148.375)
 scale = Vector2(0.819749, 0.919279)
 texture = ExtResource("6_t6ise")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/Button2"]
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/ButtonPowerUp"]
 position = Vector2(163, 193)
 scale = Vector2(0.523494, 0.663956)
 texture = ExtResource("7_wu7do")
 
-[node name="Button3" type="Button" parent="Panel"]
+[node name="ButtonDoubleTrouble" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.326
@@ -126,7 +126,7 @@ offset_right = 2306.63
 offset_bottom = 400.856
 theme_override_styles/hover = SubResource("StyleBoxFlat_ru5n1")
 
-[node name="Label" type="Label" parent="Panel/Button3"]
+[node name="Label" type="Label" parent="Panel/ButtonDoubleTrouble"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 323.0
@@ -169,7 +169,9 @@ volume_db = 8.432
 [connection signal="mouse_entered" from="ButtonBack" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="mouse_entered" from="Panel/ButtonClassic" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_classic_pressed"]
 [connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_pressed"]
-[connection signal="mouse_entered" from="Panel/Button2" to="." method="_on_button_2_mouse_entered"]
-[connection signal="mouse_entered" from="Panel/Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_classic_pressed"]
+[connection signal="mouse_entered" from="Panel/ButtonPowerUp" to="." method="_on_button_2_mouse_entered"]
+[connection signal="pressed" from="Panel/ButtonPowerUp" to="." method="_on_button_power_up_pressed"]
+[connection signal="mouse_entered" from="Panel/ButtonDoubleTrouble" to="." method="_on_button_3_mouse_entered"]
+[connection signal="pressed" from="Panel/ButtonDoubleTrouble" to="." method="_on_button_double_trouble_pressed"]

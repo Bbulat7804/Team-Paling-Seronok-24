@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://fh1su2nwtxjm"]
+
+[ext_resource type="Texture2D" uid="uid://cqs47h43gvpr3" path="res://Assets/PowerUp/PUNCH.png" id="1_ncbnh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wula"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(0, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnkvl"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(64, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oijq"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(128, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfw86"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(192, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rihv1"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(256, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ag5l"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(320, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w78h"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(384, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hoka"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(448, 0, 64, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1v7e"]
+atlas = ExtResource("1_ncbnh")
+region = Rect2(512, 0, 64, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xohct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wula")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnkvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oijq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfw86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rihv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ag5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w78h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hoka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1v7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xohct")
+frame_progress = 0.613631

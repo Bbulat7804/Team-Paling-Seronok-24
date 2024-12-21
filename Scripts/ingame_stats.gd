@@ -13,8 +13,9 @@ var p1Push = "83"
 static var p2Name
 var p2Jump = "73"
 var p2Left = "74"
-var p2Right = "75"
-var p2Push = "76"
+var p2Right = "76"
+var p2Push = "75"
+static var mode
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

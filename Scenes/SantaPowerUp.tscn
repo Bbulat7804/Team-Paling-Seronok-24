@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://b41pv5ft1wfv4"]
+
+[ext_resource type="Texture2D" uid="uid://c1mbaxkqcthb6" path="res://Assets/PowerUp/santahat REAL.png" id="1_dnc87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pagsj"]
+atlas = ExtResource("1_dnc87")
+region = Rect2(0, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewcia"]
+atlas = ExtResource("1_dnc87")
+region = Rect2(64, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypq3k"]
+atlas = ExtResource("1_dnc87")
+region = Rect2(128, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mvyb"]
+atlas = ExtResource("1_dnc87")
+region = Rect2(192, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1k4s"]
+atlas = ExtResource("1_dnc87")
+region = Rect2(256, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl5lp"]
+atlas = ExtResource("1_dnc87")
+region = Rect2(320, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ktvj"]
+atlas = ExtResource("1_dnc87")
+region = Rect2(384, 0, 64, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtvm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pagsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewcia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypq3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mvyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1k4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl5lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ktvj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_us0i6"]
+radius = 17.0294
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 1)
+sprite_frames = SubResource("SpriteFrames_qtvm0")
+autoplay = "default"
+frame_progress = 0.485485
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+shape = SubResource("CircleShape2D_us0i6")
