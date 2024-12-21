@@ -14,7 +14,7 @@ size = Vector2(77, 1319)
 size = Vector2(61, 1165)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icmo7"]
-size = Vector2(2185, 82)
+size = Vector2(1984.5, 82)
 
 [node name="Control" type="Control"]
 visibility_layer = 3
@@ -94,7 +94,7 @@ shape = SubResource("RectangleShape2D_ogx2c")
 [node name="UnloadAreaBottom" parent="." instance=ExtResource("3_5iksp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaBottom"]
-position = Vector2(762, 936)
+position = Vector2(661.75, 936)
 shape = SubResource("RectangleShape2D_icmo7")
 
 [connection signal="timeout" from="P1RespawnTimer" to="." method="_on_p_1_respawn_timer_timeout"]
