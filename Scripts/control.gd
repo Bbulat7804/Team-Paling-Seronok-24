@@ -1,9 +1,10 @@
 extends Control
 
 var playerScene = preload("res://Scenes/Player.tscn")
-var playerCameraScene = preload("res://Scenes/PlayerCamera.tscn")
 var InGameStatsScene = preload("res://Scenes/ingameStats.tscn")
 var map1Scene = preload("res://Scenes/L1MAP1.tscn")
+var cameraScene = preload("res://Scenes/PlayerCamera.tscn")
+var camera:Camera
 @onready var P1RespawnTimer : Timer = $P1RespawnTimer
 @onready var P2RespawnTimer : Timer = $P2RespawnTimer
 var inGameStats : Stats
@@ -58,16 +59,19 @@ func _initializePlayer() -> void:
 func _initializeMap() -> void:
 	inGameStats = InGameStatsScene.instantiate()
 	map1 = map1Scene.instantiate()
+	camera = cameraScene.instantiate()
 	pass
 	
 func _goToMap(map) -> void:
 	_resetInGameStats()
+	camera._linkPlayer(player1,player2)
 	player1.position = Vector2(400,550)
 	player2.position = Vector2(600,550)
 	add_child(map1)
 	add_child(player1)
 	add_child(player2)
 	add_child(inGameStats)
+	add_child(camera)
 	pass
 
 func _resetInGameStats():
