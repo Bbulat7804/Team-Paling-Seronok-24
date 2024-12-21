@@ -97,4 +97,28 @@ func _on_p_2_respawn_timer_timeout() -> void:
 	player2.position = Vector2(600,550)
 	add_child(player2)
 	pass # Replace with function body.
-	
+
+func _randomizeKey(die:Player,win:Player):
+	randomize()
+	var key
+	var rand = int(randi_range(1,4)) 
+	if rand == 1:
+		die.jump = char(int(randi_range(65,90)))
+		while die.jump==win.jump or die.jump==win.left or die.jump == win.right or die.jump == win.push:
+			die.jump = char(int(randi_range(65,90)))
+		key = die.jump
+		if die == player1:
+			inGameStats.p1Jump = key
+
+	if rand == 2:
+		die.left = char(int(randi_range(65,90)))
+		while die.left==win.jump or die.left==win.left or die.left == win.right or die.left == win.push:
+			die.jump = char(int(randi_range(65,90)))
+	if rand == 3:
+		die.right = char(int(randi_range(65,90)))
+		while die.right==win.jump or die.right==win.left or die.right == win.right or die.right == win.push:
+			die.right = char(int(randi_range(65,90)))
+	else:
+		die.push = char(int(randi_range(65,90)))
+		while die.push==win.jump or die.push==win.left or die.push == win.right or die.push == win.push:
+			die.push = char(int(randi_range(65,90)))
