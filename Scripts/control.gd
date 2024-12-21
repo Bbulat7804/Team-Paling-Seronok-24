@@ -32,6 +32,9 @@ static var randomDeathPrompt = ""
 static var deathPrompt = ""
 
 func _ready() -> void:
+	MainMenuSound.stop()
+	$AudioStreamPlayer2D.play()
+	
 	if mode == DOUBLETROUBLE:
 		Gun.randomIndex = 200
 		Bullet.speed = 500

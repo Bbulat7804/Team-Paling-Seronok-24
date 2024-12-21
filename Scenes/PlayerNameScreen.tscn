@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cj1bp1t4ma60n"]
+[gd_scene load_steps=36 format=3 uid="uid://cj1bp1t4ma60n"]
 
 [ext_resource type="Script" path="res://Scripts/player_name_screen.gd" id="1_2ogxp"]
 [ext_resource type="Texture2D" uid="uid://cku8gel3qpu5d" path="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg" id="2_db0u6"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dyw6yvlljknlc" path="res://Assets/Musics/click.mp3" id="6_p2dcn"]
 [ext_resource type="Texture2D" uid="uid://c7jq43747qyek" path="res://Assets/Main_character/Idle (32x32).png" id="7_cxb2k"]
 [ext_resource type="Texture2D" uid="uid://d0yaflgx8u73k" path="res://Assets/Second_Character/Idle (32x32).png" id="7_xea1u"]
+[ext_resource type="AudioStream" uid="uid://cifjfmh80hqtj" path="res://Assets/Musics/CHOOSE YOUR FIGHTER (Deep Voice) - Sound Effect.mp3" id="9_iqenc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3h6yc"]
 
@@ -291,6 +292,11 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_1sauu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dc0ew")
 text = "Start Game"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_iqenc")
+volume_db = 7.924
+pitch_scale = 1.12
 
 [connection signal="mouse_entered" from="ButtonBack" to="." method="_on_button_back_mouse_entered"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]

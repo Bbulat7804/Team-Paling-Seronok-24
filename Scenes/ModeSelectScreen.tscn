@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckr3maaqle2gm"]
+[gd_scene load_steps=16 format=3 uid="uid://ckr3maaqle2gm"]
 
 [ext_resource type="Script" path="res://Scripts/mode_select_screen.gd" id="1_14by4"]
 [ext_resource type="Texture2D" uid="uid://cku8gel3qpu5d" path="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg" id="2_vy2mw"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dyw6yvlljknlc" path="res://Assets/Musics/click.mp3" id="6_2jy30"]
 [ext_resource type="Texture2D" uid="uid://blj5w8ftdygqd" path="res://Assets/images/Mode2ss.PNG" id="6_t6ise"]
 [ext_resource type="Texture2D" uid="uid://dhufro38mtr27" path="res://Assets/images/santahat-1.png" id="7_wu7do"]
+[ext_resource type="Texture2D" uid="uid://duf8nnhn2glpl" path="res://Assets/images/doubletroubless.jpg" id="8_rdtdf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3h6yc"]
 
@@ -139,6 +140,11 @@ text = "Double
 Trouble"
 horizontal_alignment = 1
 
+[node name="Sprite2D" type="Sprite2D" parent="Panel/ButtonDoubleTrouble"]
+position = Vector2(150, 150.5)
+scale = Vector2(0.765171, 0.869697)
+texture = ExtResource("8_rdtdf")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 180.0
@@ -169,8 +175,8 @@ volume_db = 8.432
 [connection signal="mouse_entered" from="ButtonBack" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="mouse_entered" from="Panel/ButtonClassic" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_classic_pressed"]
 [connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_classic_pressed"]
 [connection signal="mouse_entered" from="Panel/ButtonPowerUp" to="." method="_on_button_2_mouse_entered"]
 [connection signal="pressed" from="Panel/ButtonPowerUp" to="." method="_on_button_power_up_pressed"]
 [connection signal="mouse_entered" from="Panel/ButtonDoubleTrouble" to="." method="_on_button_3_mouse_entered"]
