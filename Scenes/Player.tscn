@@ -1,13 +1,16 @@
-[gd_scene load_steps=60 format=3 uid="uid://cymr0ms8ocakc"]
+[gd_scene load_steps=63 format=3 uid="uid://dib6flttjvh3i"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_bnt3d"]
 [ext_resource type="Texture2D" uid="uid://c7jq43747qyek" path="res://Assets/Main_character/Idle (32x32).png" id="2_g848p"]
 [ext_resource type="Texture2D" uid="uid://bfuftyxeksv3i" path="res://Assets/Main_character/Idle2 (32x32).png" id="3_8iamh"]
 [ext_resource type="Texture2D" uid="uid://dhu1oolaxm1ie" path="res://Assets/Main_character/Jump (32x32).png" id="3_bim6a"]
 [ext_resource type="Texture2D" uid="uid://dfvydmcqjbwx0" path="res://Assets/Main_character/Run (32x32).png" id="4_ibdfs"]
-[ext_resource type="PackedScene" uid="uid://bma1vm0piyj1t" path="res://Scenes/PushArea.tscn" id="5_46g21"]
+[ext_resource type="PackedScene" path="res://Scenes/PushArea.tscn" id="5_46g21"]
 [ext_resource type="Texture2D" uid="uid://dbujgne7o8r05" path="res://Assets/Main_character/Jump2(32x32).png" id="5_75bw0"]
 [ext_resource type="Texture2D" uid="uid://c43c553rbnhag" path="res://Assets/Main_character/Run2(32x32).png" id="7_ffnag"]
+[ext_resource type="AudioStream" uid="uid://dgtbyy3weosll" path="res://Assets/Musics/Player1JumpSound.wav" id="9_x2nnv"]
+[ext_resource type="AudioStream" uid="uid://dflalka5nu88g" path="res://Assets/Musics/086398_game-die-81356.mp3" id="10_es10a"]
+[ext_resource type="AudioStream" uid="uid://8v2aj5jpkx60" path="res://Assets/Musics/103601__floating-tree__wet-stone-walking.mp3" id="11_7qff6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uc7bx"]
 atlas = ExtResource("2_g848p")
@@ -420,6 +423,17 @@ shape = SubResource("RectangleShape2D_tlq1q")
 [node name="ImmuneTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="JumpSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_x2nnv")
+
+[node name="dieSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_es10a")
+
+[node name="walkingSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_7qff6")
+volume_db = 22.019
+pitch_scale = 2.36
 
 [connection signal="timeout" from="PushTimer" to="." method="_on_push_timer_timeout"]
 [connection signal="timeout" from="PushedTimer" to="." method="_on_pushed_timer_timeout"]

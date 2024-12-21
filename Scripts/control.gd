@@ -30,12 +30,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player1.isDead:
+		$dieSoundPlayer.play()
 		inGameStats.p2Score += 1
 		player1.isDead = false
 		remove_child(player1)
 		P1RespawnTimer.start()
 		
 	if player2.isDead:
+		$dieSoundPlayer.play()
 		inGameStats.p1Score += 1
 		player2.isDead = false
 		remove_child(player2)

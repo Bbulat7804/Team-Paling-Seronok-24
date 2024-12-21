@@ -39,26 +39,35 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(jump) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animation.play("run" + character)
+		$walkingSoundPlayer.stop()
+		$JumpSoundPlayer.play()
 
 	if Input.is_action_just_pressed(push):
 		_push()
 	
 	direction = Input.get_axis(left, right)
 	if direction>0:
+		$walkingSoundPlayer.stop()
 		velocity.x = SPEED * 1
 	elif direction<0:
+		$walkingSoundPlayer.stop()
 		velocity.x = SPEED * -1
 	else:
 		velocity.x = 0
 	if is_on_floor():
 		if direction>0:
+			$walkingSoundPlayer.play()
 			animation.play("run" + character)
 			animation.flip_h = false;
+			
 		elif direction<0:
+			$walkingSoundPlayer.play()
 			animation.play("run" + character)
 			animation.flip_h = true;
+			
 		else:
 			animation.play("idle" + character)
+			$walkingSoundPlayer.stop()
 	else:
 		if velocity.y<0: 
 			animation.play("jump" + character)
@@ -71,7 +80,8 @@ func _die():
 		immuneTimer.start()
 		isDead = true
 		immune = true
-
+		
+	
 func _exitWorld():
 	immuneTimer.start()
 	isDead = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckr3maaqle2gm"]
+[gd_scene load_steps=15 format=3 uid="uid://ckr3maaqle2gm"]
 
 [ext_resource type="Script" path="res://Scripts/mode_select_screen.gd" id="1_14by4"]
 [ext_resource type="Texture2D" uid="uid://cku8gel3qpu5d" path="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg" id="2_vy2mw"]
@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://byw2kvxgxn3dm" path="res://Assets/Font/Pixellari.ttf" id="5_krjvs"]
 [ext_resource type="Texture2D" uid="uid://brr8dnk07lyl6" path="res://Assets/images/photo_2024-12-21_13-36-44.jpg" id="5_q4pfp"]
 [ext_resource type="AudioStream" uid="uid://dyw6yvlljknlc" path="res://Assets/Musics/click.mp3" id="6_2jy30"]
+[ext_resource type="Texture2D" uid="uid://blj5w8ftdygqd" path="res://Assets/images/Mode2ss.PNG" id="6_t6ise"]
+[ext_resource type="Texture2D" uid="uid://dhufro38mtr27" path="res://Assets/images/santahat-1.png" id="7_wu7do"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3h6yc"]
 
@@ -100,6 +102,16 @@ offset_bottom = 413.0
 theme_override_fonts/font = ExtResource("5_krjvs")
 theme_override_font_sizes/font_size = 60
 text = "Power Up"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Button2"]
+position = Vector2(150, 148.375)
+scale = Vector2(0.819749, 0.919279)
+texture = ExtResource("6_t6ise")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/Button2"]
+position = Vector2(163, 193)
+scale = Vector2(0.523494, 0.663956)
+texture = ExtResource("7_wu7do")
 
 [node name="Button3" type="Button" parent="Panel"]
 layout_mode = 1
