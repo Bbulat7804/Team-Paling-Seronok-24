@@ -106,5 +106,29 @@ stream = ExtResource("5_gsshf")
 volume_db = 7.924
 pitch_scale = 1.53
 
+[node name="Gun11" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1133, -64.9999)
+rotation = -4.14516
+
+[node name="Gun12" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1270, 361)
+rotation = -3.01418
+
+[node name="Gun13" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-81, 329)
+rotation = -0.352556
+
+[node name="Gun14" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1276, 165)
+rotation = -3.17999
+
+[node name="Gun15" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-102, 139)
+rotation = 0.118682
+
+[node name="Gun16" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-169, 607)
+rotation = -0.47473
+
 [connection signal="timeout" from="P1RespawnTimer" to="." method="_on_p_1_respawn_timer_timeout"]
 [connection signal="timeout" from="P2RespawnTimer" to="." method="_on_p_2_respawn_timer_timeout"]

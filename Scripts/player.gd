@@ -103,6 +103,9 @@ func _die():
 	if !immune :
 		print("tak immune")
 		immuneTimer.start()
+		exitWorldTimer.start()
+		remove_child(santaEffect)
+		remove_child(strengthEffect)
 		isDead = true
 		immune = true
 		immuneExit = true
@@ -111,8 +114,11 @@ func _exitWorld():
 	if immuneExit:
 		return
 	exitWorldTimer.start()
+	immuneTimer.start()
 	hasShield = false
 	remove_child(shieldEffect)
+	remove_child(santaEffect)
+	remove_child(strengthEffect)
 	isDead = true
 	immune = true
 	immuneExit = true

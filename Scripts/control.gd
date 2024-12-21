@@ -31,7 +31,7 @@ var winningPoint = 3
 func _ready() -> void:
 	if mode == DOUBLETROUBLE:
 		Gun.randomIndex = 200
-		Bullet.speed = 400
+		Bullet.speed = 500
 	else:
 		Gun.randomIndex = 400
 		Bullet.speed = 300
@@ -53,11 +53,19 @@ func _process(delta: float) -> void:
 	_handle_key_scaling(player2.left, "Score2/Panel/SpritePlayer2Left")
 	_handle_key_scaling(player2.push, "Score2/Panel/SpritePlayer2Down")
 	_handle_key_scaling(player2.right, "Score2/Panel/SpritePlayer2Right")
-	if Streak1 == 2 or Streak2 == 2:
-		if mode == POWERUP:
-			print("spawn")
-			Streak1 = 0
-			Streak2 = 0
+	if Streak1 == 2:
+		player1.hasShield = true
+		player1.add_child(player1.shieldEffect)
+		player1.shieldTimer.start()
+		Streak1 = 0
+		
+	if Streak2 == 2:
+		player2.hasShield = true
+		player2.add_child(player2.shieldEffect)
+		player2.shieldTimer.start()
+		Streak2 = 0
+		
+
 	if player1.isDead:
 		$dieSoundPlayer.play()
 		inGameStats.p2Score += 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dls0axnywr112"]
 
 [ext_resource type="Script" path="res://Scripts/map_2.gd" id="1_2us0t"]
-[ext_resource type="Texture2D" uid="uid://ck3hmdjrngbga" path="res://Assets/Background/MAP2SNOW.jpg" id="1_wb3op"]
+[ext_resource type="Texture2D" uid="uid://dnplwbdoy77u5" path="res://Assets/Background/IceCaveBackround.png" id="2_6l6c2"]
 [ext_resource type="Texture2D" uid="uid://dyq1qq31axh0l" path="res://Assets/Tiles/snowTiles.jpg" id="2_gk1mu"]
 [ext_resource type="PackedScene" uid="uid://b41pv5ft1wfv4" path="res://Scenes/SantaPowerUp.tscn" id="3_oxltv"]
 [ext_resource type="PackedScene" uid="uid://cskf53s5j4yo5" path="res://Scenes/ShieldPowerUp.tscn" id="4_ixw1d"]
@@ -5475,13 +5475,13 @@ sources/0 = SubResource("TileSetAtlasSource_dkuor")
 script = ExtResource("1_2us0t")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -406.0
-offset_top = -130.0
-offset_right = 749.0
-offset_bottom = 515.0
-scale = Vector2(1.7387, 1.80281)
+offset_left = -716.0
+offset_top = -117.0
+offset_right = 885.0
+offset_bottom = 528.0
+scale = Vector2(1.65141, 2.3476)
 theme = SubResource("Theme_spt5f")
-texture = ExtResource("1_wb3op")
+texture = ExtResource("2_6l6c2")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
