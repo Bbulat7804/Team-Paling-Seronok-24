@@ -29,6 +29,9 @@ var pressed_sprite_scale = Vector2(2.5, 2.5) # Slightly smaller for pressed effe
 var winningPoint = 3
 static var deathPrompt
 func _ready() -> void:
+	MainMenuSound.stop()
+	$AudioStreamPlayer2D.play()
+	
 	if mode == DOUBLETROUBLE:
 		Gun.randomIndex = 200
 		Bullet.speed = 500

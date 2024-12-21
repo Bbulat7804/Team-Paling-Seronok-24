@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://20g7egxw7tra"]
+[gd_scene load_steps=11 format=3 uid="uid://20g7egxw7tra"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_0u0fx"]
 [ext_resource type="PackedScene" uid="uid://dia60x3eqasis" path="res://Scenes/gun.tscn" id="2_8goiu"]
 [ext_resource type="PackedScene" uid="uid://bup5ux5liwmga" path="res://Scenes/UnloadArea.tscn" id="3_5iksp"]
 [ext_resource type="AudioStream" uid="uid://dflalka5nu88g" path="res://Assets/Musics/086398_game-die-81356.mp3" id="4_ydwce"]
 [ext_resource type="AudioStream" uid="uid://8v2aj5jpkx60" path="res://Assets/Musics/103601__floating-tree__wet-stone-walking.mp3" id="5_gsshf"]
+[ext_resource type="AudioStream" uid="uid://4cmwhh1bjv5b" path="res://Assets/Musics/Pokémon Sword & Shield - Gym Leader Battle Music (Full).mp3" id="6_h4k51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xscic"]
 size = Vector2(1986, 51)
@@ -129,6 +130,10 @@ rotation = 0.118682
 [node name="Gun16" parent="." instance=ExtResource("2_8goiu")]
 position = Vector2(-169, 607)
 rotation = -0.47473
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_h4k51")
+volume_db = 9.904
 
 [connection signal="timeout" from="P1RespawnTimer" to="." method="_on_p_1_respawn_timer_timeout"]
 [connection signal="timeout" from="P2RespawnTimer" to="." method="_on_p_2_respawn_timer_timeout"]
