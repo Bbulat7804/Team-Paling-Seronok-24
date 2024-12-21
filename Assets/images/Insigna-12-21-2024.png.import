@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cku8gel3qpu5d"
-path="res://.godot/imported/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg-752310421177deefef88ac1023dbd245.ctex"
+uid="uid://ckkn86sij8o7w"
+path="res://.godot/imported/Insigna-12-21-2024.png-3f8afe518932b8670b0f550af80e115c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BackgroundImages/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg"
-dest_files=["res://.godot/imported/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg-752310421177deefef88ac1023dbd245.ctex"]
+source_file="res://Assets/images/Insigna-12-21-2024.png"
+dest_files=["res://.godot/imported/Insigna-12-21-2024.png-3f8afe518932b8670b0f550af80e115c.ctex"]
 
 [params]
 

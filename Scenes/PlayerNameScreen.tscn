@@ -1,0 +1,299 @@
+[gd_scene load_steps=35 format=3 uid="uid://b1jiltwm58pt1"]
+
+[ext_resource type="Script" path="res://Scripts/player_name_screen.gd" id="1_2ogxp"]
+[ext_resource type="Texture2D" uid="uid://cku8gel3qpu5d" path="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg" id="2_db0u6"]
+[ext_resource type="Texture2D" uid="uid://cf4w1fg7qipuj" path="res://Assets/images/left-arrow_614864.png" id="3_odust"]
+[ext_resource type="FontFile" uid="uid://byw2kvxgxn3dm" path="res://Assets/Font/Pixellari.ttf" id="4_l5jsp"]
+[ext_resource type="AudioStream" uid="uid://v5gv3b1h0fq0" path="res://Assets/Musics/y2mate.com - Sounds of button selection in the game menu sound effect.mp3" id="5_70khs"]
+[ext_resource type="AudioStream" uid="uid://dyw6yvlljknlc" path="res://Assets/Musics/click.mp3" id="6_p2dcn"]
+[ext_resource type="Texture2D" uid="uid://c7jq43747qyek" path="res://Assets/Main_character/Idle (32x32).png" id="7_cxb2k"]
+[ext_resource type="Texture2D" uid="uid://d0yaflgx8u73k" path="res://Assets/Second_Character/Idle (32x32).png" id="7_xea1u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3h6yc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojxim"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk7fo"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44kma"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbp71"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mq1c"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4t05"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l35ml"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hygsy"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sfng"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4kqn"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_011ab"]
+atlas = ExtResource("7_xea1u")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b64cc"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbxs1"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whatj"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lmkf"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jevrg"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22tff"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44xvi"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvyts"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hsbl"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhqih"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsqw5"]
+atlas = ExtResource("7_cxb2k")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fblve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojxim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk7fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44kma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbp71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mq1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4t05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l35ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hygsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sfng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4kqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_011ab")
+}],
+"loop": true,
+"name": &"SecondPlayer",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b64cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbxs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whatj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lmkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jevrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22tff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44xvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvyts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hsbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhqih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsqw5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sauu"]
+bg_color = Color(0.47518, 0.655939, 0.463799, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc0ew"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2ogxp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.509286, 0.509286, 0.509286, 1)
+position = Vector2(595, 252)
+scale = Vector2(0.954405, 0.870208)
+texture = ExtResource("2_db0u6")
+
+[node name="ButtonBack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 162.0
+offset_bottom = 100.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3h6yc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonBack"]
+modulate = Color(0.741385, 0.741385, 0.741385, 1)
+position = Vector2(64, 48)
+scale = Vector2(0.147461, 0.147461)
+texture = ExtResource("3_odust")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 28.0
+offset_right = 319.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("4_l5jsp")
+theme_override_font_sizes/font_size = 60
+text = "Player"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 28.0
+offset_right = 523.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("4_l5jsp")
+theme_override_font_sizes/font_size = 60
+text = "Name"
+
+[node name="SoundHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_70khs")
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p2dcn")
+volume_db = 8.432
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="TextEditPlayer1" type="TextEdit" parent="CharacterBody2D"]
+offset_left = 73.0
+offset_top = 164.0
+offset_right = 341.0
+offset_bottom = 229.0
+theme_override_colors/current_line_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_l5jsp")
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Player 1 Name"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(185, 388)
+scale = Vector2(13.959, 13.959)
+sprite_frames = SubResource("SpriteFrames_fblve")
+autoplay = "default"
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+
+[node name="TextEditPlayer2" type="TextEdit" parent="CharacterBody2D2"]
+offset_left = 818.0
+offset_top = 164.0
+offset_right = 1086.0
+offset_bottom = 229.0
+theme_override_colors/current_line_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_l5jsp")
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Player 2 Name"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+position = Vector2(952, 396)
+scale = Vector2(13.959, 13.959)
+sprite_frames = SubResource("SpriteFrames_fblve")
+animation = &"SecondPlayer"
+autoplay = "SecondPlayer"
+frame_progress = 0.974037
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 377.0
+offset_right = 714.0
+offset_bottom = 428.0
+
+[node name="ButtonStartGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.4
+theme_override_fonts/font = ExtResource("4_l5jsp")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_1sauu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dc0ew")
+text = "Start Game"
+
+[connection signal="mouse_entered" from="ButtonBack" to="." method="_on_button_back_mouse_entered"]
+[connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="mouse_entered" from="CharacterBody2D/TextEditPlayer1" to="." method="_on_text_edit_player_1_mouse_entered"]
+[connection signal="mouse_entered" from="CharacterBody2D2/TextEditPlayer2" to="." method="_on_text_edit_player_2_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/ButtonStartGame" to="." method="_on_button_start_game_mouse_entered"]
