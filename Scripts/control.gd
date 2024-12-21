@@ -27,7 +27,7 @@ var player2: Player
 var default_sprite_scale = Vector2(3.0, 3.0) # Increased size for default
 var pressed_sprite_scale = Vector2(2.5, 2.5) # Slightly smaller for pressed effectwi
 var winningPoint = 3
-
+static var deathPrompt
 func _ready() -> void:
 	if mode == DOUBLETROUBLE:
 		Gun.randomIndex = 200

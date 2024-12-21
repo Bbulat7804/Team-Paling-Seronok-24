@@ -39,6 +39,8 @@ var isDead = false
 var immune = false
 var exit = false
 var immuneExit = false
+var fallPrompt = []
+var shotPrompt = []
 func _ready():
 	_initialize_push_area()
 	shieldEffect = shieldEffectSceme.instantiate()
@@ -93,7 +95,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(push):
 		_push()
 	move_and_slide()	
-	
+
+func _initializePrompt():
+	shotPrompt.push_front("Shot1")
+	shotPrompt.push_front("Shot2")
+	shotPrompt.push_front("Shot3")
+	shotPrompt.push_front("Shot4")
+	fallPrompt.push_front("Fall1")
+	fallPrompt.push_front("Fall2")
+	fallPrompt.push_front("Fall3")
+	fallPrompt.push_front("Fall4")
 func _die():
 	if hasShield:
 		print("masuk")
