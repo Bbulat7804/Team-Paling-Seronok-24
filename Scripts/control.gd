@@ -5,7 +5,6 @@ extends Control
 const CLASSIC = "CLASSIC"
 const POWERUP = "POWERUP"
 const DOUBLETROUBLE = "DOUBLETROUBLE"
-static var mode
 var playerScene = preload("res://Scenes/Player.tscn")
 var InGameStatsScene = preload("res://Scenes/ingameStats.tscn")
 var map1Scene = preload("res://Scenes/MAP1CYBERPUNK.tscn")
@@ -17,6 +16,7 @@ var Streak2 = 0
 @onready var P1RespawnTimer : Timer = $P1RespawnTimer
 @onready var P2RespawnTimer : Timer = $P2RespawnTimer
 var inGameStats : Stats
+static var mode
 static var map1
 static var mapArray = []
 static var mapIndex
@@ -25,8 +25,8 @@ var player2 : Player
 # Called when the node enters the scene tree for the first time.L
 func _ready() -> void:
 	if mode == DOUBLETROUBLE:
-		Gun.randomIndex = 200
-		Bullet.speed = 400
+		Gun.randomIndex = 150
+		Bullet.speed = 600
 	else:
 		Gun.randomIndex = 400
 		Bullet.speed = 300
@@ -37,13 +37,16 @@ func _ready() -> void:
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(player2.pushSpeed)
-	if Streak1==2 or Streak2==2:
-		if mode == POWERUP:
-			#spawn()
-			print("spawn")
-			Streak1 = 0
-			Streak2 = 0
+	if Streak1==2:
+		player1.hasShield = true
+		player1.add_child(player1.shieldEffect)
+		player1.shieldTimer.start()
+		Streak1 = 0
+	elif Streak2==2:
+		player2.hasShield = true
+		player2.add_child(player2.shieldEffect)
+		player2.shieldTimer.start()
+		Streak2 = 0
 		
 	if player1.isDead:
 		$dieSoundPlayer.play()
@@ -55,7 +58,7 @@ func _process(delta: float) -> void:
 		Streak2 += 1
 		Streak1 = 0
 		
-	if player2.isDead:
+	elif player2.isDead:
 		$dieSoundPlayer.play()
 		inGameStats.p1Score += 1
 		_randomizeKey(player2,player1)
@@ -64,7 +67,6 @@ func _process(delta: float) -> void:
 		P2RespawnTimer.start()
 		Streak1 +=1
 		Streak2 = 0
-	pass
 	
 func _initializeKeyBind() -> void:
 	player1.jump = "W"

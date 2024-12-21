@@ -13,6 +13,10 @@ extends CharacterBody2D
 @onready var jumpSound : AudioStreamPlayer2D = $JumpSoundPlayer
 @onready var strengthTimer : Timer = $StrengthTimer
 @onready var shieldTimer : Timer = $ShieldTimer
+@onready var exitWorldTimer : Timer = $ExitWorldTimer
+
+var shieldEffectSceme = preload("res://Scenes/ShieldEffect.tscn")
+var shieldEffect
 var hasShield = false
 const SPEED = 200.0
 const JUMP_VELOCITY = -540.0
@@ -28,8 +32,11 @@ var pushLeft : PushArea
 var pushRight : PushArea
 var isDead = false
 var immune = false
+var exit = false
+var immuneExit = false
 func _ready():
 	_initialize_push_area()
+	shieldEffect = shieldEffectSceme.instantiate()
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -43,8 +50,6 @@ func _physics_process(delta: float) -> void:
 	if isPushed:
 		move_and_slide()
 		pass
-
-
 	if Input.is_action_just_pressed(jump) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animation.play("run" + character)
@@ -84,13 +89,27 @@ func _physics_process(delta: float) -> void:
 	
 func _die():
 	if hasShield:
+		print("masuk")
 		hasShield = false
-		pass
-	if !immune:
+		remove_child(shieldEffect)
+		return
+	if !immune :
+		print("tak immune")
 		immuneTimer.start()
 		isDead = true
 		immune = true
-	
+		immuneExit = true
+
+func _exitWorld():
+	if immuneExit:
+		return
+	exitWorldTimer.start()
+	hasShield = false
+	remove_child(shieldEffect)
+	isDead = true
+	immune = true
+	immuneExit = true
+
 func _push():
 	pushLeft.pushable = true
 	pushRight.pushable = true
@@ -134,4 +153,9 @@ func _on_strength_timer_timeout() -> void:
 
 func _on_shield_timer_timeout() -> void:
 	hasShield = false
+	pass # Replace with function body.
+
+
+func _on_exit_world_timer_timeout() -> void:
+	immuneExit = false
 	pass # Replace with function body.
