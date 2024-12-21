@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2k0hibdbsouy"]
+[gd_scene load_steps=6 format=3 uid="uid://d2k0hibdbsouy"]
 
 [ext_resource type="Script" path="res://Scripts/bullets.gd" id="1_s4y41"]
 [ext_resource type="PackedScene" path="res://Scenes/KillZone.tscn" id="2_t14ll"]
-[ext_resource type="Texture2D" uid="uid://c8g32tajdsfg7" path="res://Assets/BulletTypeShi/32.png" id="3_7mfh7"]
+[ext_resource type="Texture2D" uid="uid://c5aeytvmsjdgc" path="res://Assets/BulletTypeShi/12.png" id="3_6g586"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm2os"]
 size = Vector2(11.5, 2)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gwmro"]
+blend_mode = 4
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_s4y41")
@@ -18,4 +21,7 @@ position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_pm2os")
 
 [node name="Sprite2D" type="Sprite2D" parent="KillZone/CollisionShape2D"]
-texture = ExtResource("3_7mfh7")
+material = SubResource("CanvasItemMaterial_gwmro")
+position = Vector2(0.75, 0)
+scale = Vector2(0.0617761, 0.0547945)
+texture = ExtResource("3_6g586")
