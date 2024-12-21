@@ -1,8 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbyt465a8kuif"]
+[gd_scene load_steps=21 format=3 uid="uid://xr60wvgusf84"]
 
 [ext_resource type="Script" path="res://Scripts/ingame_stats.gd" id="1_qik5j"]
 [ext_resource type="Texture2D" uid="uid://c7jq43747qyek" path="res://Assets/Main_character/Idle (32x32).png" id="1_rd3bs"]
 [ext_resource type="Texture2D" uid="uid://bfuftyxeksv3i" path="res://Assets/Main_character/Idle2 (32x32).png" id="2_yy52u"]
+[ext_resource type="FontFile" uid="uid://byw2kvxgxn3dm" path="res://Assets/Font/Pixellari.ttf" id="3_h8xvq"]
+[ext_resource type="Texture2D" uid="uid://gdhlju1tx44w" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/W.png" id="3_velod"]
+[ext_resource type="Texture2D" uid="uid://b1o1nx0thbmpb" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/A.png" id="4_73g4h"]
+[ext_resource type="Texture2D" uid="uid://dfoc7mutd8xvw" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/S.png" id="5_x2n67"]
+[ext_resource type="Texture2D" uid="uid://c37d8bo6sogg6" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/D.png" id="6_af3yc"]
+[ext_resource type="Texture2D" uid="uid://erjb26ot3hl6" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/I.png" id="8_2p3uk"]
+[ext_resource type="Texture2D" uid="uid://d215ebbo3lvec" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/J.png" id="9_e8mgi"]
+[ext_resource type="Texture2D" uid="uid://us5cq23t8m1x" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/K.png" id="10_alchq"]
+[ext_resource type="Texture2D" uid="uid://ceuqryqaps8b2" path="res://Assets/images/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/L.png" id="11_7prvc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btso2"]
 atlas = ExtResource("1_rd3bs")
@@ -69,14 +78,20 @@ autoplay = "default"
 layout_mode = 0
 offset_left = 90.0
 offset_top = 24.0
-offset_right = 136.0
-offset_bottom = 85.0
+offset_right = 156.0
+offset_bottom = 112.0
+theme_override_colors/font_shadow_color = Color(0.774522, 0.00100767, 0.857914, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("3_h8xvq")
+theme_override_font_sizes/font_size = 20
 text = "0"
 label_settings = SubResource("LabelSettings_7d44e")
 horizontal_alignment = 1
 uppercase = true
 
 [node name="p1KeyJump" type="Label" parent="Score1/Panel"]
+visible = false
 layout_mode = 0
 offset_left = 178.0
 offset_top = -3.0
@@ -87,31 +102,34 @@ label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
 
 [node name="p1KeyLeft" type="Label" parent="Score1/Panel"]
+visible = false
 layout_mode = 0
-offset_left = 134.0
-offset_top = 37.0
-offset_right = 221.0
-offset_bottom = 98.0
+offset_left = 117.0
+offset_top = 62.0
+offset_right = 204.0
+offset_bottom = 123.0
 text = "A"
 label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
 
 [node name="p1KeyPush" type="Label" parent="Score1/Panel"]
+visible = false
 layout_mode = 0
 offset_left = 177.0
-offset_top = 37.0
+offset_top = 58.0
 offset_right = 264.0
-offset_bottom = 98.0
+offset_bottom = 119.0
 text = "S"
 label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
 
 [node name="p1KeyRight" type="Label" parent="Score1/Panel"]
+visible = false
 layout_mode = 0
-offset_left = 223.0
-offset_top = 37.0
-offset_right = 310.0
-offset_bottom = 98.0
+offset_left = 240.0
+offset_top = 57.0
+offset_right = 327.0
+offset_bottom = 118.0
 text = "D"
 label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
@@ -124,6 +142,26 @@ offset_right = 84.0
 offset_bottom = 18.0
 text = "Player 1"
 label_settings = SubResource("LabelSettings_cemt2")
+
+[node name="SpritePlayer1Up" type="Sprite2D" parent="Score1/Panel"]
+position = Vector2(120.191, 486.677)
+scale = Vector2(3.49303, 3.49303)
+texture = ExtResource("3_velod")
+
+[node name="SpritePlayer1Left" type="Sprite2D" parent="Score1/Panel"]
+position = Vector2(44.1912, 562.677)
+scale = Vector2(3.70434, 3.70434)
+texture = ExtResource("4_73g4h")
+
+[node name="SpritePlayer1Down" type="Sprite2D" parent="Score1/Panel"]
+position = Vector2(120.191, 562.677)
+scale = Vector2(3.58051, 3.58051)
+texture = ExtResource("5_x2n67")
+
+[node name="SpritePlayer1Right" type="Sprite2D" parent="Score1/Panel"]
+position = Vector2(193.191, 563.677)
+scale = Vector2(3.46526, 3.46526)
+texture = ExtResource("6_af3yc")
 
 [node name="Score2" type="CanvasLayer" parent="."]
 
@@ -152,11 +190,17 @@ offset_top = -31.0
 offset_right = 88.0
 offset_bottom = 30.0
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.671553, 0.000272805, 0.65316, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("3_h8xvq")
 text = "0"
 label_settings = SubResource("LabelSettings_npjrn")
 horizontal_alignment = 1
 
 [node name="p2KeyJump" type="Label" parent="Score2/Panel"]
+visible = false
 layout_mode = 0
 offset_left = -82.0
 offset_top = -5.0
@@ -167,6 +211,7 @@ label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
 
 [node name="p2KeyLeft" type="Label" parent="Score2/Panel"]
+visible = false
 layout_mode = 0
 offset_left = -120.0
 offset_top = 33.0
@@ -177,6 +222,7 @@ label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
 
 [node name="p2KeyPush" type="Label" parent="Score2/Panel"]
+visible = false
 layout_mode = 0
 offset_left = -80.0
 offset_top = 35.0
@@ -187,6 +233,7 @@ label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1
 
 [node name="p2KeyRight" type="Label" parent="Score2/Panel"]
+visible = false
 layout_mode = 0
 offset_left = -40.0
 offset_top = 35.0
@@ -204,3 +251,23 @@ offset_right = 177.0
 offset_bottom = 15.0
 text = "Player 2"
 label_settings = SubResource("LabelSettings_cemt2")
+
+[node name="SpritePlayer2Up" type="Sprite2D" parent="Score2/Panel"]
+position = Vector2(48.1912, 489.441)
+scale = Vector2(3.56579, 3.56579)
+texture = ExtResource("8_2p3uk")
+
+[node name="SpritePlayer2Left" type="Sprite2D" parent="Score2/Panel"]
+position = Vector2(-28.8088, 568.441)
+scale = Vector2(3.59907, 3.59907)
+texture = ExtResource("9_e8mgi")
+
+[node name="SpritePlayer2Down" type="Sprite2D" parent="Score2/Panel"]
+position = Vector2(50.1912, 568.441)
+scale = Vector2(3.63314, 3.63314)
+texture = ExtResource("10_alchq")
+
+[node name="SpritePlayer2Right" type="Sprite2D" parent="Score2/Panel"]
+position = Vector2(128.191, 567.441)
+scale = Vector2(3.5179, 3.5179)
+texture = ExtResource("11_7prvc")

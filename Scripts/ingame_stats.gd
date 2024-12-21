@@ -35,4 +35,3 @@ func _process(delta: float) -> void:
 	$Score2/Panel/p2KeyRight.text = char(int(p2Right))
 	$Score1/Panel/p1Name.text = p1Name
 	$Score2/Panel/p2Name.text = p2Name
-	pass
