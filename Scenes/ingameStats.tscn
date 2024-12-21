@@ -45,7 +45,9 @@ script = ExtResource("1_qik5j")
 
 [node name="Score1" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="Score1"]
+[node name="Panel" type="Control" parent="Score1"]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 192.0
@@ -58,6 +60,7 @@ sprite_frames = SubResource("SpriteFrames_da0vx")
 autoplay = "default"
 
 [node name="Player1Score" type="Label" parent="Score1/Panel"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 24.0
 offset_right = 166.0
@@ -69,7 +72,9 @@ uppercase = true
 
 [node name="Score2" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="Score2"]
+[node name="Panel" type="Control" parent="Score2"]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 960.0
 offset_top = 16.0
 offset_right = 1137.0
