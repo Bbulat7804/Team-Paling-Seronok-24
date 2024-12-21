@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=6 format=3 uid="uid://bf5byl4cyrtrl"]
-=======
 [gd_scene load_steps=7 format=3 uid="uid://bf5byl4cyrtrl"]
->>>>>>> main
 
 [ext_resource type="Texture2D" uid="uid://c5s0mpcag4wmn" path="res://Assets/Background/cyberpunk.webp" id="1_54uo0"]
 [ext_resource type="Texture2D" uid="uid://df73c3qo1jnja" path="res://Assets/Tiles/tileset.png" id="3_56di0"]
@@ -224,8 +220,6 @@ offset_bottom = 2941.0
 scale = Vector2(0.35715, 0.274528)
 texture = ExtResource("1_54uo0")
 metadata/_edit_use_anchors_ = true
-<<<<<<< HEAD
-=======
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-3001, -2028)
@@ -239,4 +233,3 @@ position = Vector2(-2975, -1627)
 
 [node name="Shield" parent="." instance=ExtResource("4_6fr31")]
 position = Vector2(-2833, -1674)
->>>>>>> main
