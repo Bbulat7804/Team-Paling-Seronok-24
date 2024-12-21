@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5byl4cyrtrl"]
+[gd_scene load_steps=8 format=3 uid="uid://b1cfokpc851ia"]
 
 [ext_resource type="Texture2D" uid="uid://c5s0mpcag4wmn" path="res://Assets/Background/cyberpunk.webp" id="1_x2eeo"]
 [ext_resource type="Texture2D" uid="uid://df73c3qo1jnja" path="res://Assets/Tiles/tileset.png" id="2_3ld6m"]
-[ext_resource type="PackedScene" uid="uid://b41pv5ft1wfv4" path="res://Scenes/SantaPowerUp.tscn" id="3_17eub"]
-[ext_resource type="PackedScene" uid="uid://cskf53s5j4yo5" path="res://Scenes/ShieldPowerUp.tscn" id="4_tjr51"]
-[ext_resource type="PackedScene" uid="uid://fh1su2nwtxjm" path="res://Scenes/StrengthPowerUp.tscn" id="5_o264d"]
+[ext_resource type="PackedScene" path="res://Scenes/SantaPowerUp.tscn" id="3_17eub"]
+[ext_resource type="PackedScene" path="res://Scenes/ShieldPowerUp.tscn" id="4_tjr51"]
+[ext_resource type="PackedScene" path="res://Scenes/StrengthPowerUp.tscn" id="5_o264d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge631"]
 texture = ExtResource("2_3ld6m")
