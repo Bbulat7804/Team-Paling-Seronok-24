@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 	if player1.isDead:
 		$dieSoundPlayer.play()
 		inGameStats.p2Score += 1
+		_randomizeKey(player1,player2)
 		player1.isDead = false
 		remove_child(player1)
 		P1RespawnTimer.start()
@@ -39,6 +40,7 @@ func _process(delta: float) -> void:
 	if player2.isDead:
 		$dieSoundPlayer.play()
 		inGameStats.p1Score += 1
+		_randomizeKey(player2,player1)
 		player2.isDead = false
 		remove_child(player2)
 		P2RespawnTimer.start()
@@ -102,32 +104,42 @@ func _on_p_2_respawn_timer_timeout() -> void:
 
 func _randomizeKey(die:Player,win:Player):
 	randomize()
-	var key
-	var rand = int(randi_range(1,4)) 
+	var newKey
+	var key = str(int(randi_range(65,90)))
+	#var rand = int(randi_range(1,4)) 
+	var rand = 1
+	while key==win.left or key == win.right or key == win.jump or key == win.push or key == die.left or key == die.right or key == die.jump or key == die.push:
+		randomize()
+		key = str(int(randi_range(65,90)))
+	newKey = str(char(int(key)))
+	print(key)
+	print(newKey)
+	
 	if rand == 1:
-		die.jump = char(int(randi_range(65,90)))
-		while die.jump==win.jump or die.jump==win.left or die.jump == win.right or die.jump == win.push:
-			die.jump = char(int(randi_range(65,90)))
-		key = die.jump
-		if die == player1:
-			inGameStats.p1Jump = key
-		else:
-			inGameStats.p2Jump
-
-	if rand == 2:
-		die.left = char(int(randi_range(65,90)))
-		while die.left==win.jump or die.left==win.left or die.left == win.right or die.left == win.push:
-			die.left = char(int(randi_range(65,90)))
-		key = die.left
-		if die == player1:
+		if die==player1:
 			inGameStats.p1Left = key
+			player1.left = newKey
 		else:
-			inGameStats.p2Left
-	if rand == 3:
-		die.right = char(int(randi_range(65,90)))
-		while die.right==win.jump or die.right==win.left or die.right == win.right or die.right == win.push:
-			die.right = char(int(randi_range(65,90)))
+			inGameStats.p2Left = key
+			player2.left = newKey
+	elif rand == 2:
+		if die==player1:
+			inGameStats.p1Right = key
+			player1.right = newKey
+		else:
+			inGameStats.p2Right = key
+			player2.right = newKey
+	elif rand == 3:
+		if die==player1:
+			inGameStats.p1Jump = key
+			player1.jump = newKey
+		else:
+			inGameStats.p2Jump = key
+			player2.jump = newKey
 	else:
-		die.push = char(int(randi_range(65,90)))
-		while die.push==win.jump or die.push==win.left or die.push == win.right or die.push == win.push:
-			die.push = char(int(randi_range(65,90)))
+		if die==player1:
+			inGameStats.p1Push = key
+			player1.push = newKey
+		else:
+			inGameStats.p2Push = key
+			player2.push = newKey
