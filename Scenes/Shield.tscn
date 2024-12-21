@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://t17171tcq07y"]
+[gd_scene load_steps=22 format=3 uid="uid://bx44req7aavku"]
 
 [ext_resource type="Script" path="res://Scripts/Shield.gd" id="1_a6lb3"]
 [ext_resource type="Texture2D" uid="uid://bxu3w0t8nsimx" path="res://Assets/BulletTypeShi/Bananas.png" id="1_l0obs"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf5byl4cyrtrl"]
+[gd_scene load_steps=6 format=3 uid="uid://bf5byl4cyrtrl"]
 
 [ext_resource type="Texture2D" uid="uid://c5s0mpcag4wmn" path="res://Assets/Background/cyberpunk.webp" id="1_54uo0"]
 [ext_resource type="Texture2D" uid="uid://df73c3qo1jnja" path="res://Assets/Tiles/tileset.png" id="3_56di0"]
@@ -221,14 +221,6 @@ texture = ExtResource("3_56di0")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ge631")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nvxpi"]
-normal = Vector2(-0.999994, 0.00334446)
-distance = 95.0836
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sfkcv"]
-normal = Vector2(1, 0)
-distance = 12.0
-
 [node name="Map1" type="Node2D"]
 position = Vector2(3017, 1884)
 script = SubResource("GDScript_bsxp5")
@@ -249,17 +241,3 @@ offset_bottom = 2874.0
 scale = Vector2(0.440693, 0.328522)
 texture = ExtResource("1_54uo0")
 metadata/_edit_use_anchors_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-1556, -1185)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-216, -383)
-shape = SubResource("WorldBoundaryShape2D_nvxpi")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-1556, -1185)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-1473, -370)
-shape = SubResource("WorldBoundaryShape2D_sfkcv")

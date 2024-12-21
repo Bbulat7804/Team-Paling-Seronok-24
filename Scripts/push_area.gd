@@ -9,7 +9,6 @@ var player : Player
 var inside = false
 
 func _on_body_entered(body: Node2D) -> void:
-	print("masuk")
 	if body is Player:
 		player = body
 		inside = true
@@ -22,7 +21,6 @@ func _process(delta: float) -> void:
 		pass
 	
 func _on_body_exited(body: Node2D) -> void:
-	print("keluar")
 	inside = false
 	player = null
 	pass # Replace with function body.var x

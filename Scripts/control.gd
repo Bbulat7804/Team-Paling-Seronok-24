@@ -13,14 +13,12 @@ var camera:Camera
 var inGameStats : Stats
 static var map1
 static var mapArray = []
-static var p1Name
-static var p2Name
 static var mapIndex
 var player1 : Player
 var player2 : Player
 # Called when the node enters the scene tree for the first time.L
 func _ready() -> void:
-	Gun.randomIndex = 100
+	Gun.randomIndex = 300
 	Bullet.speed = 300
 	_initializeMap()
 	_initializePlayer()
@@ -106,14 +104,11 @@ func _randomizeKey(die:Player,win:Player):
 	randomize()
 	var newKey
 	var key = str(int(randi_range(65,90)))
-	#var rand = int(randi_range(1,4)) 
-	var rand = 1
+	var rand = int(randi_range(1,4)) 
 	while key==win.left or key == win.right or key == win.jump or key == win.push or key == die.left or key == die.right or key == die.jump or key == die.push:
 		randomize()
 		key = str(int(randi_range(65,90)))
 	newKey = str(char(int(key)))
-	print(key)
-	print(newKey)
 	
 	if rand == 1:
 		if die==player1:

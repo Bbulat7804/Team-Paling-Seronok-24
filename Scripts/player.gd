@@ -25,7 +25,6 @@ var pushLeft : PushArea
 var pushRight : PushArea
 var isDead = false
 var immune = false
-
 func _ready():
 	_initialize_push_area()
 	
@@ -82,13 +81,7 @@ func _die():
 		immuneTimer.start()
 		isDead = true
 		immune = true
-		
-	
-func _exitWorld():
-	immuneTimer.start()
-	isDead = true
-	immune = true
-	print("Exit")
+		print("die")
 	
 func _push():
 	pushLeft.pushable = true
@@ -96,6 +89,9 @@ func _push():
 	pushTimer.start()
 
 func _pushed(x:int):
+	print(immune)
+	if immune:
+		pass
 	velocity.x = x
 	isPushed = true
 	pushedTimer.start()
