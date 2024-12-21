@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cey0a6nj4036q"]
 
-[ext_resource type="Script" path="res://Scripts/PowerUp.gd" id="1_nbq4w"]
+[ext_resource type="Script" path="res://Scripts/Punch.gd" id="1_nbq4w"]
 [ext_resource type="Texture2D" uid="uid://cqs47h43gvpr3" path="res://Assets/PowerUp/PUNCH.png" id="2_h7sxn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ieb3"]
@@ -77,15 +77,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Punch" type="Node"]
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Punch" type="Area2D"]
 script = ExtResource("1_nbq4w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0ieb3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D/CollisionShape2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(-2, 4)
 sprite_frames = SubResource("SpriteFrames_0bntb")
-frame_progress = 0.807671
+frame_progress = 0.873987
