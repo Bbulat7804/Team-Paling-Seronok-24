@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://63npyxs7o1xk"]
+[gd_scene load_steps=6 format=3 uid="uid://dls0axnywr112"]
 
 [ext_resource type="Texture2D" uid="uid://ck3hmdjrngbga" path="res://Assets/Background/MAP2SNOW.jpg" id="1_wb3op"]
 [ext_resource type="Texture2D" uid="uid://dyq1qq31axh0l" path="res://Assets/Tiles/snowTiles.jpg" id="2_gk1mu"]

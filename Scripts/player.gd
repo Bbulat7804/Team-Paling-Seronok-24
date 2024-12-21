@@ -11,6 +11,9 @@ extends CharacterBody2D
 @onready var walkingSound : AudioStreamPlayer2D = $walkingSoundPlayer
 @onready var dieSound : AudioStreamPlayer2D = $dieSoundPlayer
 @onready var jumpSound : AudioStreamPlayer2D = $JumpSoundPlayer
+@onready var strengthTimer : Timer = $StrengthTimer
+@onready var shieldTimer : Timer = $ShieldTimer
+var hasShield = false
 const SPEED = 200.0
 const JUMP_VELOCITY = -540.0
 var jump
@@ -77,11 +80,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()	
 	
 func _die():
+	if hasShield:
+		hasShield = false
+		pass
 	if !immune:
 		immuneTimer.start()
 		isDead = true
 		immune = true
-		print("die")
 	
 func _push():
 	pushLeft.pushable = true
@@ -89,7 +94,6 @@ func _push():
 	pushTimer.start()
 
 func _pushed(x:int):
-	print(immune)
 	if immune:
 		pass
 	velocity.x = x
@@ -117,6 +121,15 @@ func _initialize_push_area() -> void:
 
 
 func _on_immune_timer_timeout() -> void:
-	print("dah tak immune")
 	immune = false
+	pass # Replace with function body.
+
+
+func _on_strength_timer_timeout() -> void:
+	pushSpeed -= 1000
+	pass # Replace with function body.
+
+
+func _on_shield_timer_timeout() -> void:
+	hasShield = false
 	pass # Replace with function body.

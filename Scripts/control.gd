@@ -8,7 +8,7 @@ const DOUBLETROUBLE = "DOUBLETROUBLE"
 static var mode
 var playerScene = preload("res://Scenes/Player.tscn")
 var InGameStatsScene = preload("res://Scenes/ingameStats.tscn")
-var map1Scene = preload("res://Scenes/L1MAP1.tscn")
+var map1Scene = preload("res://Scenes/MAP1CYBERPUNK.tscn")
 var cameraScene = preload("res://Scenes/PlayerCamera.tscn")
 var mainScreenScene = preload("res://Scenes/MainScreen.tscn")
 var camera:Camera

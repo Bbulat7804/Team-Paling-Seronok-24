@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://fh1su2nwtxjm"]
+[gd_scene load_steps=14 format=3 uid="uid://fh1su2nwtxjm"]
 
+[ext_resource type="Script" path="res://Scripts/strength_power_up.gd" id="1_8tai0"]
 [ext_resource type="Texture2D" uid="uid://cqs47h43gvpr3" path="res://Assets/PowerUp/PUNCH.png" id="1_ncbnh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wula"]
@@ -73,8 +74,23 @@ animations = [{
 "speed": 11.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7yf6"]
+radius = 6.0
+height = 18.0
+
+[node name="StrengthPowerUp" type="Area2D"]
+z_index = 2
+collision_mask = 6
+script = ExtResource("1_8tai0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 2)
+scale = Vector2(0.820313, 0.809524)
 sprite_frames = SubResource("SpriteFrames_xohct")
-frame_progress = 0.613631
+frame_progress = 0.558679
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_q7yf6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b41pv5ft1wfv4"]
+[gd_scene load_steps=12 format=3 uid="uid://b41pv5ft1wfv4"]
 
+[ext_resource type="Script" path="res://Scripts/santa_power_up.gd" id="1_408hh"]
 [ext_resource type="Texture2D" uid="uid://c1mbaxkqcthb6" path="res://Assets/PowerUp/santahat REAL.png" id="1_dnc87"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pagsj"]
@@ -60,16 +61,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_us0i6"]
-radius = 17.0294
 
-[node name="Area2D" type="Area2D"]
+[node name="SantaPowerUp" type="Area2D"]
+z_index = 2
+collision_mask = 6
+script = ExtResource("1_408hh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 1)
+position = Vector2(-1.90735e-06, 2)
+scale = Vector2(0.578125, 0.515385)
 sprite_frames = SubResource("SpriteFrames_qtvm0")
 autoplay = "default"
-frame_progress = 0.485485
+frame_progress = 0.252908
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 3)
+position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_us0i6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

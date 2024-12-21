@@ -436,6 +436,16 @@ stream = ExtResource("11_7qff6")
 volume_db = 5.305
 pitch_scale = 2.36
 
+[node name="StrengthTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="ShieldTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="PushTimer" to="." method="_on_push_timer_timeout"]
 [connection signal="timeout" from="PushedTimer" to="." method="_on_pushed_timer_timeout"]
 [connection signal="timeout" from="ImmuneTimer" to="." method="_on_immune_timer_timeout"]
+[connection signal="timeout" from="StrengthTimer" to="." method="_on_strength_timer_timeout"]
+[connection signal="timeout" from="ShieldTimer" to="." method="_on_shield_timer_timeout"]
