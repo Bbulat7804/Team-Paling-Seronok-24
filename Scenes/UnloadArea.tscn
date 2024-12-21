@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/unload_area.gd" id="1_tqsrn"]
 
 [node name="UnloadArea" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_tqsrn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
