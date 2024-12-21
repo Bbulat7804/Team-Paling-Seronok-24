@@ -41,33 +41,34 @@ font_size = 44
 font_size = 44
 
 [node name="IngameMenu" type="Node2D"]
+position = Vector2(-476, -264)
 script = ExtResource("1_qik5j")
 
 [node name="Player1Icon" type="AnimatedSprite2D" parent="."]
-position = Vector2(62, 49)
+position = Vector2(63, 49)
 scale = Vector2(2.625, 2.8125)
 sprite_frames = SubResource("SpriteFrames_da0vx")
 autoplay = "default"
 
 [node name="Player2Icon" type="AnimatedSprite2D" parent="."]
-position = Vector2(1085, 45)
+position = Vector2(896, 44)
 scale = Vector2(2.45313, 2.72656)
 sprite_frames = SubResource("SpriteFrames_silao")
 
 [node name="Player1Score" type="Label" parent="."]
-offset_left = 115.0
-offset_top = 25.0
-offset_right = 161.0
-offset_bottom = 86.0
+offset_left = 104.0
+offset_top = 40.0
+offset_right = 150.0
+offset_bottom = 101.0
 text = "0"
 label_settings = SubResource("LabelSettings_7d44e")
 uppercase = true
 
 [node name="Player2Score" type="Label" parent="."]
 visibility_layer = 512
-offset_left = 1016.0
-offset_top = 24.0
-offset_right = 1056.0
-offset_bottom = 85.0
+offset_left = 827.0
+offset_top = 33.0
+offset_right = 867.0
+offset_bottom = 94.0
 text = "0"
 label_settings = SubResource("LabelSettings_npjrn")

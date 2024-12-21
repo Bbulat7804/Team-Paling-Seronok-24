@@ -18,7 +18,8 @@ func _ready() -> void:
 	_initializeMap()
 	_initializePlayer()
 	_initalizeKeyBind()
-	_goToMap(map1)
+	add_child(map1)
+	#_goToMap(map1)
 	
 	pass # Replace with function body.
 
@@ -70,8 +71,8 @@ func _goToMap(map) -> void:
 	add_child(map1)
 	add_child(player1)
 	add_child(player2)
-	add_child(inGameStats)
-	add_child(camera)
+	#camera.add_child(inGameStats)
+	#add_child(camera)
 	pass
 
 func _resetInGameStats():

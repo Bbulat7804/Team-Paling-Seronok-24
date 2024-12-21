@@ -21,7 +21,8 @@ var isPushed = false
 var pushLeft : PushArea
 var pushRight : PushArea
 var isDead = false
-	
+var immune = false
+
 func _ready():
 	_initialize_push_area()
 	
@@ -66,7 +67,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()	
 	
 func _die():
-	isDead = true
+	if !immune:
+		immuneTimer.start()
+		isDead = true
+		immune = true
 	
 func _push():
 	pushLeft.pushable = true
@@ -99,4 +103,6 @@ func _initialize_push_area() -> void:
 
 
 func _on_immune_timer_timeout() -> void:
+	print("dah tak immune")
+	immune = false
 	pass # Replace with function body.

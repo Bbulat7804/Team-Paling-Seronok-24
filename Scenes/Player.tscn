@@ -417,7 +417,7 @@ position = Vector2(18, 5)
 shape = SubResource("RectangleShape2D_tlq1q")
 
 [node name="ImmuneTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [connection signal="timeout" from="PushTimer" to="." method="_on_push_timer_timeout"]

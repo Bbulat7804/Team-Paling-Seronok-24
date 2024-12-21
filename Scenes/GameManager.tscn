@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://20g7egxw7tra"]
+[gd_scene load_steps=5 format=3 uid="uid://20g7egxw7tra"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_0u0fx"]
 [ext_resource type="PackedScene" uid="uid://dia60x3eqasis" path="res://Scenes/gun.tscn" id="2_8goiu"]
+[ext_resource type="PackedScene" uid="uid://bup5ux5liwmga" path="res://Scenes/UnloadArea.tscn" id="3_5iksp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bv7a8"]
+distance = 51.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -57,6 +61,17 @@ one_shot = true
 
 [node name="P2RespawnTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="UnloadAreaRight" parent="." instance=ExtResource("3_5iksp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaRight"]
+shape = SubResource("WorldBoundaryShape2D_bv7a8")
+
+[node name="UnloadAreaLeft" parent="." instance=ExtResource("3_5iksp")]
+
+[node name="UnloadAreaTop" parent="." instance=ExtResource("3_5iksp")]
+
+[node name="UnloadAreaBottom" parent="." instance=ExtResource("3_5iksp")]
 
 [connection signal="timeout" from="P1RespawnTimer" to="." method="_on_p_1_respawn_timer_timeout"]
 [connection signal="timeout" from="P2RespawnTimer" to="." method="_on_p_2_respawn_timer_timeout"]

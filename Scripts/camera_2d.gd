@@ -17,7 +17,6 @@ func _linkPlayer(p1, p2):
 func _process(delta: float) -> void:
 	if player1 == null or player2 == null:
 		pass
-	print("process")
 	# Calculate the average position of the two players
 	var average_position = (player1.position + player2.position) / 2
 	position = average_position  # Center the camera between the two players

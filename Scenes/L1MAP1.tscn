@@ -1,177 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf5byl4cyrtrl"]
+[gd_scene load_steps=8 format=3 uid="uid://bf5byl4cyrtrl"]
 
 [ext_resource type="Texture2D" uid="uid://c5s0mpcag4wmn" path="res://Assets/Background/cyberpunk.webp" id="1_54uo0"]
-[ext_resource type="Script" path="res://Scripts/map1.gd" id="1_n014b"]
-[ext_resource type="Texture2D" uid="uid://cwtvdwu4ldh51" path="res://Assets/Tiles/neo_zero_tiles_and_buildings_01.png" id="3_08sc7"]
 [ext_resource type="Texture2D" uid="uid://df73c3qo1jnja" path="res://Assets/Tiles/tileset.png" id="3_56di0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmji2"]
-texture = ExtResource("3_08sc7")
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-11:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-15:1/0 = 0
-16:1/0 = 0
-17:1/0 = 0
-18:1/0 = 0
-19:1/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-8:2/0 = 0
-3:3/0 = 0
-5:3/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-6:5/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-10:6/0 = 0
-11:6/0 = 0
-12:6/0 = 0
-13:6/0 = 0
-4:7/0 = 0
-9:7/0 = 0
-10:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-10:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-3:12/0 = 0
-5:12/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-5:13/0 = 0
-6:13/0 = 0
-7:13/0 = 0
-8:13/0 = 0
-9:13/0 = 0
-10:13/0 = 0
-11:13/0 = 0
-13:13/0 = 0
-14:13/0 = 0
-3:14/0 = 0
-4:14/0 = 0
-5:14/0 = 0
-6:14/0 = 0
-7:14/0 = 0
-8:14/0 = 0
-9:14/0 = 0
-10:14/0 = 0
-11:14/0 = 0
-12:14/0 = 0
-13:14/0 = 0
-14:14/0 = 0
-15:14/0 = 0
-16:14/0 = 0
-17:14/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-8:15/0 = 0
-9:15/0 = 0
-10:15/0 = 0
-11:15/0 = 0
-12:15/0 = 0
-13:15/0 = 0
-14:15/0 = 0
-15:15/0 = 0
-16:15/0 = 0
-17:15/0 = 0
-3:16/0 = 0
-4:16/0 = 0
-5:16/0 = 0
-6:16/0 = 0
-7:16/0 = 0
-8:16/0 = 0
-9:16/0 = 0
-10:16/0 = 0
-11:16/0 = 0
-12:16/0 = 0
-13:16/0 = 0
-14:16/0 = 0
-15:16/0 = 0
-16:16/0 = 0
-17:16/0 = 0
-3:17/0 = 0
-4:17/0 = 0
-5:17/0 = 0
-6:17/0 = 0
-7:17/0 = 0
-8:17/0 = 0
-9:17/0 = 0
-10:17/0 = 0
-11:17/0 = 0
-12:17/0 = 0
-13:17/0 = 0
-14:17/0 = 0
-15:17/0 = 0
-16:17/0 = 0
-17:17/0 = 0
-3:18/0 = 0
-4:18/0 = 0
-5:18/0 = 0
-6:18/0 = 0
-7:18/0 = 0
-8:18/0 = 0
-9:18/0 = 0
-10:18/0 = 0
-11:18/0 = 0
-12:18/0 = 0
-13:18/0 = 0
-14:18/0 = 0
-15:18/0 = 0
-16:18/0 = 0
-17:18/0 = 0
-3:19/0 = 0
-4:19/0 = 0
-5:19/0 = 0
-6:19/0 = 0
-7:19/0 = 0
-8:19/0 = 0
-9:19/0 = 0
-10:19/0 = 0
-11:19/0 = 0
-12:19/0 = 0
-13:19/0 = 0
-14:19/0 = 0
-15:19/0 = 0
-16:19/0 = 0
-17:19/0 = 0
+[sub_resource type="GDScript" id="GDScript_bsxp5"]
+script/source = "extends Node2D
 
-[sub_resource type="TileSet" id="TileSet_khwqx"]
-sources/0 = SubResource("TileSetAtlasSource_mmji2")
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge631"]
 texture = ExtResource("3_56di0")
@@ -387,7 +231,7 @@ distance = 12.0
 
 [node name="Map1" type="Node2D"]
 position = Vector2(3017, 1884)
-script = ExtResource("1_n014b")
+script = SubResource("GDScript_bsxp5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -3018.0
@@ -398,12 +242,8 @@ scale = Vector2(0.192504, 0.133405)
 texture = ExtResource("1_54uo0")
 metadata/_edit_use_anchors_ = true
 
-[node name="TileMap2" type="TileMap" parent="."]
-scale = Vector2(10, 10)
-tile_set = SubResource("TileSet_khwqx")
-format = 2
-
 [node name="TileMap" type="TileMap" parent="."]
+visibility_layer = 256
 position = Vector2(-3001, -2028)
 scale = Vector2(1, 0.8)
 tile_set = SubResource("TileSet_6dwg4")
