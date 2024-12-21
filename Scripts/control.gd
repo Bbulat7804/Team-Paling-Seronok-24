@@ -10,16 +10,12 @@ var player2 : Player
 # Called when the node enters the scene tree for the first time.L
 func _ready() -> void:
 	Gun.randomIndex = 100
-	Bullet.speed = 500
+	Bullet.speed = 300
 	_initializeMap()
 	_initializePlayer()
 	_initalizeKeyBind()
-	#_goToMap(map1)
-	player1.position = Vector2(500,700)
-	player2.position = Vector2(700,700)
-	add_child(player1)
-	add_child(player2)
-	add_child(map1)
+	_goToMap(map1)
+	
 	pass # Replace with function body.
 
 
@@ -38,7 +34,7 @@ func _initalizeKeyBind() -> void:
 	player2.left = "J"
 	player2.right = "L"
 	player2.push = "K"
-	player2.character = "1"
+	player2.character = "2"
 	pass
 func _initializePlayer() -> void:
 	player1 = playerScene.instantiate()
@@ -51,10 +47,9 @@ func _initializeMap() -> void:
 	pass
 	
 func _goToMap(map) -> void:
-	print("go to map ",map)
-	player1.position = Vector2(500,700)
-	player2.position = Vector2(700,700)
+	player1.position = Vector2(400,550)
+	player2.position = Vector2(600,550)
+	add_child(map1)
 	add_child(player1)
 	add_child(player2)
-	add_child(map)
 	pass

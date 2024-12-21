@@ -49,5 +49,5 @@ position = Vector2(686, -47)
 rotation = 1.15017
 
 [node name="Gun10" parent="." instance=ExtResource("2_8goiu")]
-position = Vector2(-129, 444)
+position = Vector2(-141, 459)
 rotation = 0.118682
