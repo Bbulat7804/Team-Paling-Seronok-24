@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbyt465a8kuif"]
+[gd_scene load_steps=11 format=3 uid="uid://dbyt465a8kuif"]
 
 [ext_resource type="Script" path="res://Scripts/ingame_stats.gd" id="1_qik5j"]
 [ext_resource type="Texture2D" uid="uid://c7jq43747qyek" path="res://Assets/Main_character/Idle (32x32).png" id="1_rd3bs"]
@@ -20,6 +20,9 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7d44e"]
+font_size = 44
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8yua"]
 font_size = 44
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2md0"]
@@ -45,7 +48,9 @@ script = ExtResource("1_qik5j")
 
 [node name="Score1" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="Score1"]
+[node name="Panel" type="Control" parent="Score1"]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 192.0
@@ -59,25 +64,70 @@ autoplay = "default"
 
 [node name="Player1Score" type="Label" parent="Score1/Panel"]
 layout_mode = 0
-offset_left = 120.0
+offset_left = 90.0
 offset_top = 24.0
-offset_right = 166.0
+offset_right = 136.0
 offset_bottom = 85.0
 text = "0"
 label_settings = SubResource("LabelSettings_7d44e")
 horizontal_alignment = 1
 uppercase = true
 
+[node name="p1KeyJump" type="Label" parent="Score1/Panel"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 21.0
+offset_right = 249.0
+offset_bottom = 82.0
+text = "W"
+label_settings = SubResource("LabelSettings_y8yua")
+horizontal_alignment = 1
+
+[node name="p1KeyLabel" type="Label" parent="Score1/Panel"]
+offset_left = 183.0
+offset_right = 477.0
+offset_bottom = 23.0
+text = "Jump           Left            Push          Right  "
+
+[node name="p1KeyLeft" type="Label" parent="Score1/Panel"]
+offset_left = 244.0
+offset_top = 20.0
+offset_right = 331.0
+offset_bottom = 81.0
+text = "A"
+label_settings = SubResource("LabelSettings_y8yua")
+horizontal_alignment = 1
+
+[node name="p1KeyPush" type="Label" parent="Score1/Panel"]
+offset_left = 327.0
+offset_top = 22.0
+offset_right = 414.0
+offset_bottom = 83.0
+text = "S"
+label_settings = SubResource("LabelSettings_y8yua")
+horizontal_alignment = 1
+
+[node name="p1KeyRight" type="Label" parent="Score1/Panel"]
+offset_left = 408.0
+offset_top = 18.0
+offset_right = 495.0
+offset_bottom = 79.0
+text = "D"
+label_settings = SubResource("LabelSettings_y8yua")
+horizontal_alignment = 1
+
 [node name="Score2" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="Score2"]
+[node name="Panel" type="Control" parent="Score2"]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 960.0
 offset_top = 16.0
 offset_right = 1137.0
 offset_bottom = 120.0
 
 [node name="Player2Icon" type="AnimatedSprite2D" parent="Score2/Panel"]
-position = Vector2(136, 40)
+position = Vector2(136, 39)
 scale = Vector2(2.45313, 2.72656)
 sprite_frames = SubResource("SpriteFrames_silao")
 flip_h = true
@@ -88,11 +138,54 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 11.0
-offset_top = -29.5
-offset_right = 51.0
-offset_bottom = 31.5
+offset_left = 48.0
+offset_top = -31.0
+offset_right = 88.0
+offset_bottom = 30.0
 grow_vertical = 2
 text = "0"
 label_settings = SubResource("LabelSettings_npjrn")
+horizontal_alignment = 1
+
+[node name="p2KeyLabel" type="Label" parent="Score2/Panel"]
+offset_left = -271.0
+offset_top = -1.0
+offset_right = 23.0
+offset_bottom = 22.0
+text = "Jump           Left            Push          Right  "
+
+[node name="p2KeyJump" type="Label" parent="Score2/Panel"]
+offset_left = -294.0
+offset_top = 18.0
+offset_right = -207.0
+offset_bottom = 79.0
+text = "I"
+label_settings = SubResource("LabelSettings_y8yua")
+horizontal_alignment = 1
+
+[node name="p2KeyLeft" type="Label" parent="Score2/Panel"]
+offset_left = -211.0
+offset_top = 17.0
+offset_right = -124.0
+offset_bottom = 78.0
+text = "A"
+label_settings = SubResource("LabelSettings_y8yua")
+horizontal_alignment = 1
+
+[node name="p2KeyPush" type="Label" parent="Score2/Panel"]
+offset_left = -125.0
+offset_top = 16.0
+offset_right = -38.0
+offset_bottom = 77.0
+text = "K"
+label_settings = SubResource("LabelSettings_y8yua")
+horizontal_alignment = 1
+
+[node name="p2KeyRight" type="Label" parent="Score2/Panel"]
+offset_left = -49.0
+offset_top = 16.0
+offset_right = 38.0
+offset_bottom = 77.0
+text = "L"
+label_settings = SubResource("LabelSettings_y8yua")
 horizontal_alignment = 1

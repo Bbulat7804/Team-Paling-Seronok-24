@@ -97,4 +97,10 @@ func _on_p_2_respawn_timer_timeout() -> void:
 	player2.position = Vector2(600,550)
 	add_child(player2)
 	pass # Replace with function body.
-	
+
+func _randomizeKey(die:Player,win:Player):
+	randomize()
+	var rand = int(randi_range(1,4)) 
+	if rand == 1:
+		die
+		
