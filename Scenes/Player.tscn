@@ -422,3 +422,4 @@ one_shot = true
 
 [connection signal="timeout" from="PushTimer" to="." method="_on_push_timer_timeout"]
 [connection signal="timeout" from="PushedTimer" to="." method="_on_pushed_timer_timeout"]
+[connection signal="timeout" from="ImmuneTimer" to="." method="_on_immune_timer_timeout"]
