@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c5hbkooi7xit7"]
+[gd_scene load_steps=22 format=3 uid="uid://cey0a6nj4036q"]
 
 [ext_resource type="Texture2D" uid="uid://bxu3w0t8nsimx" path="res://Assets/BulletTypeShi/Bananas.png" id="1_dgtvc"]
 [ext_resource type="Script" path="res://Scripts/PowerUp.gd" id="2_f7vl1"]
