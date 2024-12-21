@@ -157,7 +157,7 @@ volume_db = 8.432
 [connection signal="mouse_entered" from="ButtonBack" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="mouse_entered" from="Panel/ButtonClassic" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_classic_pressed"]
 [connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/ButtonClassic" to="." method="_on_button_classic_pressed"]
 [connection signal="mouse_entered" from="Panel/Button2" to="." method="_on_button_2_mouse_entered"]
 [connection signal="mouse_entered" from="Panel/Button3" to="." method="_on_button_3_mouse_entered"]

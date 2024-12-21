@@ -15,12 +15,10 @@ var player2 : Player
 func _ready() -> void:
 	Gun.randomIndex = 100
 	Bullet.speed = 300
-	#_initializeMap()
+	_initializeMap()
 	_initializePlayer()
 	_initalizeKeyBind()
-	map1 = map1Scene.instantiate()
-	add_child(map1)
-	#_goToMap(map1)
+	_goToMap(map1)
 	
 	pass # Replace with function body.
 
@@ -72,8 +70,8 @@ func _goToMap(map) -> void:
 	add_child(map1)
 	add_child(player1)
 	add_child(player2)
-	#camera.add_child(inGameStats)
-	#add_child(camera)
+	add_child(inGameStats)
+	add_child(camera)
 	pass
 
 func _resetInGameStats():

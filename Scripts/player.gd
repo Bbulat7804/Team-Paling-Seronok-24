@@ -71,6 +71,12 @@ func _die():
 		immuneTimer.start()
 		isDead = true
 		immune = true
+
+func _exitWorld():
+	immuneTimer.start()
+	isDead = true
+	immune = true
+	print("Exit")
 	
 func _push():
 	pushLeft.pushable = true
