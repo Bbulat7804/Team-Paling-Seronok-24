@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var pushedTimer : Timer = $PushedTimer
 @onready var pushAreaLeft : Area2D = $PushAreaLeft
 @onready var pushAreaRight : Area2D = $PushAreaRight
+@onready var immuneTimer : Timer = $ImmuneTimer
 const SPEED = 200.0
 const JUMP_VELOCITY = -540.0
 var jump
@@ -19,6 +20,7 @@ var push
 var isPushed = false
 var pushLeft : PushArea
 var pushRight : PushArea
+var isDead = false
 	
 func _ready():
 	_initialize_push_area()
@@ -64,8 +66,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()	
 	
 func _die():
-	queue_free()
-
+	isDead = true
+	
 func _push():
 	pushLeft.pushable = true
 	pushRight.pushable = true
@@ -94,3 +96,7 @@ func _initialize_push_area() -> void:
 	pushRight = get_node("PushAreaRight")
 	pushLeft.pushX = -pushSpeed
 	pushRight.pushX = pushSpeed
+
+
+func _on_immune_timer_timeout() -> void:
+	pass # Replace with function body.
