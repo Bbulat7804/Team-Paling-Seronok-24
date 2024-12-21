@@ -10,13 +10,12 @@
 size = Vector2(1986, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y36r4"]
-size = Vector2(77, 1319)
+size = Vector2(77, 1505)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogx2c"]
-size = Vector2(61, 1165)
+size = Vector2(61, 1560.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_icmo7"]
-size = Vector2(1984.5, 82)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5ct43"]
 
 [node name="Control" type="Control"]
 visibility_layer = 3
@@ -84,20 +83,20 @@ shape = SubResource("RectangleShape2D_xscic")
 [node name="UnloadAreaLeft" parent="." instance=ExtResource("3_5iksp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaLeft"]
-position = Vector2(-293.5, 437.5)
+position = Vector2(-293.5, 530.5)
 shape = SubResource("RectangleShape2D_y36r4")
 
 [node name="UnloadAreaTop" parent="." instance=ExtResource("3_5iksp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaTop"]
-position = Vector2(1604, 380)
+position = Vector2(1604, 577.75)
 shape = SubResource("RectangleShape2D_ogx2c")
 
 [node name="UnloadAreaBottom" parent="." instance=ExtResource("3_5iksp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnloadAreaBottom"]
-position = Vector2(661.75, 936)
-shape = SubResource("RectangleShape2D_icmo7")
+position = Vector2(626, 959)
+shape = SubResource("WorldBoundaryShape2D_5ct43")
 
 [node name="dieSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ydwce")

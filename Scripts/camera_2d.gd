@@ -7,7 +7,7 @@ var player2
 
 # Minimum and maximum zoom levels
 var min_zoom = Vector2(1.9, 1.9) 
-var max_zoom = Vector2(1, 1) 
+var max_zoom = Vector2(1.4, 1.4) 
 var zoom_factor = 0.3 
 
 func _linkPlayer(p1, p2):

@@ -382,11 +382,10 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqyer"]
-radius = 8.0
-height = 22.0
+height = 26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlq1q"]
-size = Vector2(2, 20)
+size = Vector2(0.4375, 29.25)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
@@ -395,12 +394,13 @@ collision_mask = 255
 script = ExtResource("1_bnt3d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
+texture_filter = 3
+texture_repeat = 3
 sprite_frames = SubResource("SpriteFrames_w3xxf")
-animation = &"run2"
+animation = &"jump2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_hqyer")
 
 [node name="PushTimer" type="Timer" parent="."]
@@ -410,15 +410,17 @@ wait_time = 0.098
 wait_time = 0.111
 
 [node name="PushAreaLeft" parent="." instance=ExtResource("5_46g21")]
+collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushAreaLeft"]
-position = Vector2(-14.75, 5)
+position = Vector2(-12.7813, 2.625)
 shape = SubResource("RectangleShape2D_tlq1q")
 
 [node name="PushAreaRight" parent="." instance=ExtResource("5_46g21")]
+collision_layer = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushAreaRight"]
-position = Vector2(18, 5)
+position = Vector2(16.8125, 2.75)
 shape = SubResource("RectangleShape2D_tlq1q")
 
 [node name="ImmuneTimer" type="Timer" parent="."]
@@ -444,8 +446,12 @@ one_shot = true
 wait_time = 10.0
 one_shot = true
 
+[node name="ExitWorldTimer" type="Timer" parent="."]
+wait_time = 1.1
+
 [connection signal="timeout" from="PushTimer" to="." method="_on_push_timer_timeout"]
 [connection signal="timeout" from="PushedTimer" to="." method="_on_pushed_timer_timeout"]
 [connection signal="timeout" from="ImmuneTimer" to="." method="_on_immune_timer_timeout"]
 [connection signal="timeout" from="StrengthTimer" to="." method="_on_strength_timer_timeout"]
 [connection signal="timeout" from="ShieldTimer" to="." method="_on_shield_timer_timeout"]
+[connection signal="timeout" from="ExitWorldTimer" to="." method="_on_exit_world_timer_timeout"]

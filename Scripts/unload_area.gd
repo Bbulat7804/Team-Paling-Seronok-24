@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body._die()
+		body._exitWorld()
 	else:
 		body.queue_free()
 	pass # Replace with function body.
