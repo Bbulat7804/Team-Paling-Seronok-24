@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://4j47ws5t18ta"]
+
+[ext_resource type="Script" path="res://Scripts/control.gd" id="1_0u0fx"]
+[ext_resource type="PackedScene" uid="uid://duqjaevl7v2eb" path="res://Scenes/gun.tscn" id="2_8goiu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0u0fx")
+
+[node name="Gun" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-48, -47)
+rotation = 0.853466
+
+[node name="Gun2" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1400, 204)
+rotation = -3.71057
+
+[node name="Gun3" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-178, 345)
+rotation = 0.286234
+
+[node name="Gun4" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(158, -39)
+rotation = -4.66876
+
+[node name="Gun5" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(453, -51)
+rotation = -4.4279
+
+[node name="Gun6" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(986, -43)
+rotation = 1.91812
+
+[node name="Gun7" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1296, -12)
+rotation = 2.337
+
+[node name="Gun8" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(1388, 528)
+rotation = 3.02989
+
+[node name="Gun9" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(686, -47)
+rotation = 1.15017
+
+[node name="Gun10" parent="." instance=ExtResource("2_8goiu")]
+position = Vector2(-252, 541)
+rotation = 0.118682
