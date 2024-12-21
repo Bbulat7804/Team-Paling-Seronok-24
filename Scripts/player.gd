@@ -98,14 +98,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()	
 
 func _initializePrompt():
-	shotPrompt.push_front("Shot1")
-	shotPrompt.push_front("Shot2")
-	shotPrompt.push_front("Shot3")
-	shotPrompt.push_front("Shot4")
-	fallPrompt.push_front("Fall1")
-	fallPrompt.push_front("Fall2")
-	fallPrompt.push_front("Fall3")
-	fallPrompt.push_front("Fall4")
+	shotPrompt.push_front("Really Just Got Shot. \nWhat an L !")
+	shotPrompt.push_front("Really Just Got Shot by \n A Very Slow Bullet !")
+	shotPrompt.push_front("Just Got Shot. So Sad !")
+	shotPrompt.push_front("Got Shot. Damn Das Crazy !")
+	
+	fallPrompt.push_front("Fell. You don't know how to \nuse your legs, do you ?")
+	fallPrompt.push_front("Fell, what an L !")
+	fallPrompt.push_front("Fell. Do you believe it?")
+	fallPrompt.push_front("really seems to not know \nhow to control his legs !")
 
 func _die():
 	if hasShield:

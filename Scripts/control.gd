@@ -27,7 +27,7 @@ var player1: Player
 var player2: Player
 var default_sprite_scale = Vector2(3.0, 3.0) # Increased size for default
 var pressed_sprite_scale = Vector2(2.5, 2.5) # Slightly smaller for pressed effectwi
-var winningPoint = 3
+var winningPoint = 10
 static var randomDeathPrompt = ""
 static var deathPrompt = ""
 
@@ -48,9 +48,12 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if inGameStats.p1Score == 3 or inGameStats.p2Score == 3:
+	if inGameStats.p1Score == winningPoint or inGameStats.p2Score == winningPoint:
+		randomDeathPrompt = ""
+		deathPrompt = ""
 		var next_scene_path = "res://Scenes/EndScreen.tscn"
 		get_tree().change_scene_to_file(next_scene_path)
+	
 	_handle_key_scaling(player1.jump, "Score1/Panel/SpritePlayer1Up")
 	_handle_key_scaling(player1.left, "Score1/Panel/SpritePlayer1Left")
 	_handle_key_scaling(player1.push, "Score1/Panel/SpritePlayer1Down")
@@ -81,7 +84,7 @@ func _process(delta: float) -> void:
 		P1RespawnTimer.start()
 		Streak2 += 1
 		Streak1 = 0
-		deathPrompt = str("Player 1 " , randomDeathPrompt)
+		deathPrompt = str(inGameStats.p1Name, " " ,randomDeathPrompt)
 		DeathPromptTimer.start()
 	if player2.isDead:
 		$dieSoundPlayer.play()
@@ -92,7 +95,7 @@ func _process(delta: float) -> void:
 		P2RespawnTimer.start()
 		Streak1 += 1
 		Streak2 = 0
-		deathPrompt = str("player 2 " , randomDeathPrompt)
+		deathPrompt = str(inGameStats.p2Name, " " , randomDeathPrompt)
 		DeathPromptTimer.start()
 	pass
 
