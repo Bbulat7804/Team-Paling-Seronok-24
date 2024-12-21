@@ -58,6 +58,7 @@ sprite_frames = SubResource("SpriteFrames_da0vx")
 autoplay = "default"
 
 [node name="Player1Score" type="Label" parent="Score1/Panel"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 24.0
 offset_right = 166.0
