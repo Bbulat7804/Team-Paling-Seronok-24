@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwb0j7vsq3ap6"]
+
+[ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_4k2yc"]
+[ext_resource type="Texture2D" uid="uid://cku8gel3qpu5d" path="res://Assets/Background/Free-Sky-with-Clouds-Background-Pixel-Art4.jpg" id="2_2bxc7"]
+[ext_resource type="FontFile" uid="uid://byw2kvxgxn3dm" path="res://Assets/Font/Pixellari.ttf" id="3_o7w0k"]
+[ext_resource type="AudioStream" uid="uid://v5gv3b1h0fq0" path="res://Assets/Musics/y2mate.com - Sounds of button selection in the game menu sound effect.mp3" id="5_xwugq"]
+[ext_resource type="AudioStream" uid="uid://dyw6yvlljknlc" path="res://Assets/Musics/click.mp3" id="6_hvyxm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hgy5"]
+bg_color = Color(0.47518, 0.655939, 0.463799, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1bbs"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4k2yc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.509286, 0.509286, 0.509286, 1)
+position = Vector2(595, 252)
+scale = Vector2(0.954405, 0.870208)
+texture = ExtResource("2_2bxc7")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.236275, 0.260355, 0.272531, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 360.0
+offset_right = 796.0
+offset_bottom = 466.0
+
+[node name="ButtonStartGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.4
+theme_override_fonts/font = ExtResource("3_o7w0k")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_0hgy5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q1bbs")
+text = "Restart Game"
+
+[node name="ButtonMainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.4
+theme_override_fonts/font = ExtResource("3_o7w0k")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_0hgy5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q1bbs")
+text = "Main Menu"
+
+[node name="SoundHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xwugq")
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hvyxm")
+volume_db = 8.432
+
+[node name="LabelGameOver" type="Label" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 183.0
+offset_right = 969.0
+offset_bottom = 334.0
+theme_override_colors/font_shadow_color = Color(0.671854, 0.200846, 0.771648, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("3_o7w0k")
+theme_override_font_sizes/font_size = 150
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="LabelPlayer1Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 21.0
+offset_right = 285.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_o7w0k")
+theme_override_font_sizes/font_size = 40
+text = "Player(1) : "
+
+[node name="LabelPlayer1Points" type="Label" parent="LabelPlayer1Name"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 49.0
+offset_right = 194.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("3_o7w0k")
+theme_override_font_sizes/font_size = 30
+text = "0000"
+
+[node name="LabelPlayer2Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 727.0
+offset_top = 22.0
+offset_right = 1052.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("3_o7w0k")
+theme_override_font_sizes/font_size = 40
+text = "Player(2) : "
+horizontal_alignment = 2
+
+[node name="LabelPlayer2Points" type="Label" parent="LabelPlayer2Name"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 42.0
+offset_right = 393.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("3_o7w0k")
+theme_override_font_sizes/font_size = 40
+text = "0000"
+horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="VBoxContainer/ButtonStartGame" to="." method="_on_button_start_game_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ButtonMainMenu" to="." method="_on_button_start_game_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]

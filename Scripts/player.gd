@@ -36,6 +36,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		walkingSound.stop()
 		velocity += get_gravity() * delta
+		
+	pushLeft.pushX = -pushSpeed
+	pushRight.pushX = pushSpeed
 	
 	if isPushed:
 		move_and_slide()
@@ -116,8 +119,7 @@ func _on_pushed_timer_timeout() -> void:
 func _initialize_push_area() -> void:
 	pushLeft = get_node("PushAreaLeft")
 	pushRight = get_node("PushAreaRight")
-	pushLeft.pushX = -pushSpeed
-	pushRight.pushX = pushSpeed
+	
 
 
 func _on_immune_timer_timeout() -> void:
@@ -126,7 +128,7 @@ func _on_immune_timer_timeout() -> void:
 
 
 func _on_strength_timer_timeout() -> void:
-	pushSpeed -= 1000
+	pushSpeed -= 1500
 	pass # Replace with function body.
 
 
