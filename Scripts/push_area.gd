@@ -19,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	if pushable and inside:
 		player._pushed(pushX)
-	pass
+		pass
 	
 func _on_body_exited(body: Node2D) -> void:
 	print("keluar")
